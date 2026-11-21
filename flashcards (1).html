@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="th"><head>
+<meta charset="UTF-8"><style id="qw-theme">:root {
+  --color-bg: #faf9fc !important;
+  --color-text: #131920 !important;
+  --react-pdf-text-layer: 1 !important;
+  --highlight-bg-color: #b400aa !important;
+  --highlight-selected-bg-color: #006400 !important;
+  --react-pdf-annotation-layer: 1 !important;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>") !important;
+  --input-focus-border-color: Highlight !important;
+  --input-focus-outline: 1px solid Canvas !important;
+  --input-unfocused-border-color: transparent !important;
+  --input-disabled-border-color: transparent !important;
+  --input-hover-border-color: black !important;
+  --link-outline: none !important;
+  --qs-data-categorical-01: #4338ca !important;
+  --qs-data-categorical-06: #0c4a6e !important;
+  --qs-data-categorical-10: #831843 !important;
+  --flow-size-overview-canvas-min-height: 480px !important;
+  --chat-column-max: 720px !important;
+  --color-navbar-bg: #f9f9fb !important;
+  --color-navbar-fg: #131920 !important;
+  --color-navbar-divider: #0000001f !important;
+  --color-leftnav-bg: #fff !important;
+  --color-bg-chat-view: #f9f9fb !important;
+  --color-bg-secondary: #fff !important;
+  --color-bg-tertiary: #f9fafb !important;
+  --color-bg-hover: #f3f4f6 !important;
+  --color-surface: #f9fafb !important;
+  --color-surface-hover: #f3f4f6 !important;
+  --color-surface-active: #e5e7eb !important;
+  --color-border: #0000001f !important;
+  --color-border-light: #0000000f !important;
+  --color-border-strong: #d1d5db !important;
+  --background-toggle-off-default: #fff0 !important;
+  --color-primary: #4200db !important;
+  --color-primary-dark: #35009e !important;
+  --color-primary-light: #8575ff !important;
+  --color-primary-bg: #e8e6ff !important;
+  --color-primary-hover-border: #35009e !important;
+  --color-nav-icon-active: #4200db !important;
+  --color-nav-hover-border: #4200db !important;
+  --color-primary-alpha-3: color-mix(in srgb, #4200db 3%, transparent) !important;
+  --color-primary-alpha-5: color-mix(in srgb, #4200db 5%, transparent) !important;
+  --color-primary-alpha-8: color-mix(in srgb, #4200db 8%, transparent) !important;
+  --color-primary-alpha-12: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-alpha-15: color-mix(in srgb, #4200db 15%, transparent) !important;
+  --color-primary-alpha-20: color-mix(in srgb, #4200db 20%, transparent) !important;
+  --color-primary-alpha-25: color-mix(in srgb, #4200db 25%, transparent) !important;
+  --color-primary-alpha-30: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-primary-alpha-40: color-mix(in srgb, #4200db 40%, transparent) !important;
+  --color-primary-alpha-50: color-mix(in srgb, #4200db 50%, transparent) !important;
+  --color-primary-alpha-60: color-mix(in srgb, #4200db 60%, transparent) !important;
+  --color-primary-subtle: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-primary-border: color-mix(in srgb, #4200db 30%, transparent) !important;
+  --color-focus-ring: #4200db !important;
+  --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent) !important;
+  --color-sidebar-hover-solid: color-mix(in srgb, #4200db 12%, #faf9fc) !important;
+  --block-selection-outline-offset: 2px !important;
+  --color-accent: #4200db !important;
+  --color-accent-foreground: #4200db !important;
+  --color-accent-dark: #35009e !important;
+  --color-accent-light: #e8e6ff !important;
+  --color-accent-inverse: #fff !important;
+  --color-link: #4200db !important;
+  --color-brand-ai-gradient-start: #6842ff !important;
+  --color-brand-ai-gradient-mid: #d600ba !important;
+  --color-brand-ai-gradient-end: #ff4b14 !important;
+  --color-brand-kiro: #9147ff !important;
+  --color-primary-gradient-end: #e8e6ff !important;
+  --color-primary-bg-solid: #e8e6ff !important;
+  --color-user-bubble: #f3f3f7 !important;
+  --color-user-bubble-text: #131920 !important;
+  --color-text-secondary: #5e5e5e !important;
+  --color-text-tertiary: #656871 !important;
+  --color-text-muted: #656871 !important;
+  --color-text-on-primary: #fff !important;
+  --color-success: #00802f !important;
+  --color-success-dark: #00471e !important;
+  --color-success-light: #d9ffd6 !important;
+  --color-success-hover: #005c26 !important;
+  --color-success-bg: #e6f5eb !important;
+  --color-success-border: #b3d9bf !important;
+  --color-success-foreground: #00802f !important;
+  --color-success-dark-foreground: #00471e !important;
+  --color-success-text: #00471e !important;
+  --color-error: #db0000 !important;
+  --color-error-dark: #700000 !important;
+  --color-error-light: #ffe0e0 !important;
+  --color-error-hover: #ffe0e0 !important;
+  --color-error-bg: #fceaea !important;
+  --color-error-border: #f2cccc !important;
+  --color-error-active-border: #db0000 !important;
+  --color-error-foreground: #db0000 !important;
+  --color-error-dark-foreground: #700000 !important;
+  --color-error-inverse: #fff !important;
+  --color-error-text: #700000 !important;
+  --color-warning: #f2b100 !important;
+  --color-warning-dark: #573a00 !important;
+  --color-warning-light: #fffbbd !important;
+  --color-warning-hover: #db9200 !important;
+  --color-warning-bg: #fef7e6 !important;
+  --color-warning-border: #f9dfa3 !important;
+  --color-warning-foreground: #f2b100 !important;
+  --color-warning-dark-foreground: #573a00 !important;
+  --color-warning-inverse: #573a00 !important;
+  --color-surface-warning: #fffbbd !important;
+  --color-text-warning: #573a00 !important;
+  --color-info: #006ce0 !important;
+  --color-info-dark: #002a66 !important;
+  --color-info-light: #d1f1ff !important;
+  --color-info-hover: #003b8f !important;
+  --color-info-bg: #ebf3fc !important;
+  --color-info-border: #b3d1f0 !important;
+  --color-info-foreground: #006ce0 !important;
+  --color-info-dark-foreground: #002a66 !important;
+  --color-info-inverse: #fff !important;
+  --color-overlay: #00000080 !important;
+  --color-shadow: #00000014 !important;
+  --color-hover: #0000000d !important;
+  --color-tooltip-bg: #000000d9 !important;
+  --color-tooltip-text: #fff !important;
+  --color-voice-purple: #8575ff !important;
+  --color-voice-purple-dark: #4200db !important;
+  --color-voice-purple-light: #8575ff !important;
+  --color-voice-red: #db0000 !important;
+  --color-voice-red-dark: #700000 !important;
+  --color-voice-amber: #f2b100 !important;
+  --color-voice-purple-glow: #4200db66 !important;
+  --color-voice-red-glow: #db000066 !important;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace !important;
+  --text-2xs: .5625rem !important;
+  --text-xs: .625rem !important;
+  --text-sm: .6875rem !important;
+  --text-base: .75rem !important;
+  --text-md: .8125rem !important;
+  --text-lg: .875rem !important;
+  --text-xl: 1rem !important;
+  --text-2xl: 1.125rem !important;
+  --text-3xl: 1.25rem !important;
+  --text-4xl: 1.5rem !important;
+  --text-5xl: 2rem !important;
+  --spacing-1: calc(.25rem * 1) !important;
+  --spacing-1-5: calc(.25rem * 1.5) !important;
+  --spacing-2: calc(.25rem * 2) !important;
+  --spacing-3: calc(.25rem * 3) !important;
+  --spacing-4: calc(.25rem * 4) !important;
+  --spacing-5: calc(.25rem * 5) !important;
+  --spacing-6: calc(.25rem * 6) !important;
+  --spacing-7: calc(.25rem * 7) !important;
+  --spacing-8: calc(.25rem * 8) !important;
+  --spacing-9: calc(.25rem * 9) !important;
+  --spacing-10: calc(.25rem * 10) !important;
+  --border-radius-rounded-lg: 8px !important;
+  --radius-sm: 6px !important;
+  --radius-md: 10px !important;
+  --radius-card: 12px !important;
+  --radius-lg: 16px !important;
+  --radius-pill: 8px !important;
+  --shadow-sm: 0 1px 2px #0000000d !important;
+  --shadow-md: 0 4px 12px #00000014 !important;
+  --shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --color-success-bg-solid: #d9ffd6 !important;
+  --color-error-bg-solid: #ffe0e0 !important;
+  --color-error-border-solid: #ffe0e0 !important;
+  --color-warning-bg-solid: #fffbbd !important;
+  --color-warning-text: #573a00 !important;
+  --color-info-bg-solid: #d1f1ff !important;
+  --color-info-bg-solid-alt: #d1f1ff !important;
+  --color-info-text: #002a66 !important;
+  --color-info-text-alt: #002a66 !important;
+  --color-emerald: #10b981 !important;
+  --color-teal: #4ecdc4 !important;
+  --color-code-bg: #f3f3f7 !important;
+  --color-code-header-bg: #f1f3f5 !important;
+  --color-code-text: #24292e !important;
+  --color-code-border: #e1e4e8 !important;
+  --color-code-muted: #6a737d !important;
+  --color-inline-code-bg: #f3f3f7 !important;
+  --color-inline-code-text: #24292e !important;
+  --color-inline-code-border: #e1e4e8 !important;
+  --color-scrollbar-thumb: #d1d5db !important;
+  --color-scrollbar-track: transparent !important;
+  --qs-data-cat-01: #4338ca !important;
+  --qs-data-cat-02: #d97706 !important;
+  --qs-data-cat-03: #0891b2 !important;
+  --qs-data-cat-04: #8b5cf6 !important;
+  --qs-data-cat-05: #15803d !important;
+  --qs-data-cat-06: #0c4a6e !important;
+  --qs-data-cat-07: #d946ef !important;
+  --qs-data-cat-08: #65a30d !important;
+  --qs-data-cat-09: #1d4ed8 !important;
+  --qs-data-cat-10: #831843 !important;
+  --qs-data-cat-11: #c2410c !important;
+  --qs-data-cat-12: #115e59 !important;
+  --qs-data-cat-other: #737373 !important;
+  --qs-content: #fff !important;
+  --qs-main: #fff !important;
+  --qs-primary-foreground: #131920 !important;
+  --qs-secondary-foreground: #656871 !important;
+  --qs-tertiary-foreground: #656871 !important;
+  --qs-placeholder-foreground: #656871 !important;
+  --qs-divider: #dedee3 !important;
+  --qs-default-border: #8c8c94 !important;
+  --qs-neutral-soft: #b4b4bb !important;
+  --qs-neutral-gray-50: #f9fafb !important;
+  --qs-tertiary-background: #f9fafb !important;
+  --qs-action-hover: #f3f3f7 !important;
+  --qs-primary-default: #4200db !important;
+  --qs-primary-dark: #35009e !important;
+  --qs-primary-medium: #8575ff !important;
+  --qs-primary-light: #e8e6ff !important;
+  --qs-primary-inverse: #fff !important;
+  --qs-success-default: #00802f !important;
+  --qs-success-dark: #00471e !important;
+  --qs-success-light: #d9ffd6 !important;
+  --qs-error-default: #db0000 !important;
+  --qs-error-dark: #700000 !important;
+  --qs-warning-default: #f2b100 !important;
+  --qs-warning-dark: #573a00 !important;
+  --qs-warning-light: #fffbbd !important;
+  --qs-info-default: #006ce0 !important;
+  --qs-info-dark: #002a66 !important;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --safe-top: 0px !important;
+  --safe-bottom: 0px !important;
+  --safe-left: 0px !important;
+  --safe-right: 0px !important;
+  --qs-action-active: #e8e6ff !important;
+  --qs-action-destructive: #b10054 !important;
+  --qs-action-destructive-active: #8a0042 !important;
+  --qs-action-destructive-hover: #9c004a !important;
+  --qs-action-disabled: #f3f3f7 !important;
+  --qs-action-pressed: #e1ddd5 !important;
+  --qs-action-primary: #97529b !important;
+  --qs-action-primary-active: #79427c !important;
+  --qs-action-primary-foreground: #fff !important;
+  --qs-action-primary-hover: #884a8c !important;
+  --qs-action-secondary: #f5f3ef !important;
+  --qs-action-secondary-active: #e1ddd5 !important;
+  --qs-action-secondary-hover: #ede9e3 !important;
+  --qs-action-secondary-shaded: #ede9e3 !important;
+  --qs-action-secondary-shaded-active: #cdc7bd !important;
+  --qs-action-secondary-shaded-hover: #e1ddd5 !important;
+  --qs-active-border: #4200db !important;
+  --qs-alert-error-bg: #fbe6e6 !important;
+  --qs-alert-error-border: #f1b0b0 !important;
+  --qs-alert-info-bg: #dfebfa !important;
+  --qs-alert-info-border: #a0c6f0 !important;
+  --qs-alert-success-bg: #e0f8e8 !important;
+  --qs-alert-success-border: #93e2b0 !important;
+  --qs-alert-warning-bg: #f7f3ca !important;
+  --qs-alert-warning-border: #e6d05e !important;
+  --qs-application-navbar: #4200db !important;
+  --qs-application-navbar-dark: #35009e !important;
+  --qs-application-navbar-foreground: #fff !important;
+  --qs-application-navbar-light: #e8e6ff !important;
+  --qs-automation-dark: #660052 !important;
+  --qs-automation-default: #d600ba !important;
+  --qs-automation-light: #ffe0fb !important;
+  --qs-automation-medium: #b3008f !important;
+  --qs-automation-soft: #ff94f1 !important;
+  --qs-avatar-blue-bg: #d1f1ff !important;
+  --qs-avatar-blue-fg: #002a66 !important;
+  --qs-avatar-fuchsia-bg: #fce6ff !important;
+  --qs-avatar-fuchsia-fg: #590066 !important;
+  --qs-avatar-green-bg: #d9ffd6 !important;
+  --qs-avatar-green-fg: #00471e !important;
+  --qs-avatar-neutral-bg: #dedee3 !important;
+  --qs-avatar-neutral-fg: #131920 !important;
+  --qs-avatar-orange-bg: #ffe0d6 !important;
+  --qs-avatar-orange-fg: #661800 !important;
+  --qs-avatar-pink-bg: #ffe0fb !important;
+  --qs-avatar-pink-fg: #660052 !important;
+  --qs-avatar-primary-bg: #e8e6ff !important;
+  --qs-avatar-primary-fg: #35009e !important;
+  --qs-avatar-red-bg: #ffe0e0 !important;
+  --qs-avatar-red-fg: #700000 !important;
+  --qs-avatar-violet-bg: #f2e5ff !important;
+  --qs-avatar-violet-fg: #45008a !important;
+  --qs-avatar-yellow-bg: #fffbbd !important;
+  --qs-avatar-yellow-fg: #573a00 !important;
+  --qs-aws-black: #000 !important;
+  --qs-aws-bright-blue-1: #5f95f0 !important;
+  --qs-aws-bright-green-1: #6ee750 !important;
+  --qs-aws-bright-green-2: #86c348 !important;
+  --qs-aws-bright-orange-1: #ff7a28 !important;
+  --qs-aws-bright-pink-1: #ff4d8b !important;
+  --qs-aws-bright-pink-2: #fe7aaa !important;
+  --qs-aws-bright-purple-1: #b052ff !important;
+  --qs-aws-bright-purple-2: #d27de3 !important;
+  --qs-aws-bright-yellow-1: #f3c300 !important;
+  --qs-aws-bright-yellow-2: #ffdd42 !important;
+  --qs-aws-dark-blue-1: #475aa4 !important;
+  --qs-aws-dark-blue-2: #013357 !important;
+  --qs-aws-dark-green-1: #3a601f !important;
+  --qs-aws-dark-green-2: #3b4400 !important;
+  --qs-aws-dark-orange-1: #ac6f5c !important;
+  --qs-aws-dark-orange-2: #a6360d !important;
+  --qs-aws-dark-pink-1: #b85e97 !important;
+  --qs-aws-dark-pink-2: #8f0a3e !important;
+  --qs-aws-dark-purple-1: #97529b !important;
+  --qs-aws-dark-purple-2: #580e98 !important;
+  --qs-aws-dark-yellow-1: #b49e61 !important;
+  --qs-aws-dark-yellow-2: #563b04 !important;
+  --qs-aws-off-white: #f5f3ef !important;
+  --qs-aws-prime-blue: #0578ff !important;
+  --qs-aws-smile-orange: #ff6200 !important;
+  --qs-aws-warm-gray-1: #7e7a72 !important;
+  --qs-aws-white: #fff !important;
+  --qs-blue-100: #dfebfa !important;
+  --qs-blue-1000: #131d37 !important;
+  --qs-blue-300: #a0c6f0 !important;
+  --qs-blue-500: #5288df !important;
+  --qs-blue-700: #3459c1 !important;
+  --qs-blue-900: #2b407d !important;
+  --qs-border-emphasis: #bbb4a9 !important;
+  --qs-brand: #fff !important;
+  --qs-brand-foreground: #131920 !important;
+  --qs-brand-navbar: #131920 !important;
+  --qs-brand-navbar-dark: #000 !important;
+  --qs-brand-navbar-foreground: #fff !important;
+  --qs-brand-navbar-light: #dedee3 !important;
+  --qs-button-primary-hover: #884a8c !important;
+  --qs-button-secondary-pressed: #e1ddd5 !important;
+  --qs-card-hover: #fcfbfa !important;
+  --qs-chat-default: #f3f3f7 !important;
+  --qs-coachmark: #006ce0 !important;
+  --qs-connection-dark: #661800 !important;
+  --qs-connection-default: #db3300 !important;
+  --qs-connection-light: #ffe0d6 !important;
+  --qs-connection-medium: #db3300 !important;
+  --qs-connection-soft: #ff997a !important;
+  --qs-content-inverse: #333843 !important;
+  --qs-content-inverse-active: #131920 !important;
+  --qs-contrast-foreground: #131920 !important;
+  --qs-control-selected-bg: #4200db !important;
+  --qs-control-selected-hover-bg: #35009e !important;
+  --qs-control-track: #928b82 !important;
+  --qs-data-categorical-02: #d97706 !important;
+  --qs-data-categorical-03: #0891b2 !important;
+  --qs-data-categorical-04: #8b5cf6 !important;
+  --qs-data-categorical-05: #15803d !important;
+  --qs-data-categorical-07: #d946ef !important;
+  --qs-data-categorical-08: #65a30d !important;
+  --qs-data-categorical-09: #1d4ed8 !important;
+  --qs-data-categorical-11: #c2410c !important;
+  --qs-data-categorical-12: #115e59 !important;
+  --qs-data-categorical-other: #737373 !important;
+  --qs-data-divergent-negative: #ea580c !important;
+  --qs-data-divergent-positive: #4f46e5 !important;
+  --qs-data-divergent-red-green-negative: #dc2626 !important;
+  --qs-data-divergent-red-green-positive: #16a34a !important;
+  --qs-data-missing: #d4d4d4 !important;
+  --qs-data-sentiment-neutral: #737373 !important;
+  --qs-data-sentiment-warning: #9e6900 !important;
+  --qs-data-sequential-duochromatic-high: #1e1b4b !important;
+  --qs-data-sequential-duochromatic-low: #8b5cf6 !important;
+  --qs-data-sequential-monochromatic-high: #4f46e5 !important;
+  --qs-default-badge: #b4b4bb !important;
+  --qs-default-badge-dot: #656871 !important;
+  --qs-dimension: #4200db !important;
+  --qs-dimension-experimental: #4200db !important;
+  --qs-dimension-experimental-foreground: #4200db !important;
+  --qs-dimension-foreground: #fff !important;
+  --qs-disabled: #8c8c94 !important;
+  --qs-disabled-border: #dedee3 !important;
+  --qs-disabled-foreground: #b4b4bb !important;
+  --qs-divider-light: #f3f3f7 !important;
+  --qs-error-active-border: #db0000 !important;
+  --qs-error-border: #ffe0e0 !important;
+  --qs-error-foreground: #db0000 !important;
+  --qs-error-inverse: #fff !important;
+  --qs-error-light: #ffe0e0 !important;
+  --qs-error-medium: #900 !important;
+  --qs-error-soft: #ff9e9e !important;
+  --qs-feedback-error-bg: #fbe6e6 !important;
+  --qs-feedback-error-border: #f1b0b0 !important;
+  --qs-feedback-info-bg: #dfebfa !important;
+  --qs-feedback-info-border: #a0c6f0 !important;
+  --qs-feedback-success-bg: #e0f8e8 !important;
+  --qs-feedback-success-border: #93e2b0 !important;
+  --qs-feedback-warning-bg: #f7f3ca !important;
+  --qs-feedback-warning-border: #e6d05e !important;
+  --qs-focus-offset: 1px !important;
+  --qs-focus-ring: #131d37 !important;
+  --qs-font-base-letter-spacing: .15px !important;
+  --qs-font-display: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif !important;
+  --qs-gradient-automation: #3b3731 !important;
+  --qs-gradient-automation-light: #f5f3ef !important;
+  --qs-gradient-connection: #3b3731 !important;
+  --qs-gradient-connection-light: #f5f3ef !important;
+  --qs-gradient-insight: #3b3731 !important;
+  --qs-gradient-insight-light: #f5f3ef !important;
+  --qs-gradient-visualization: #3b3731 !important;
+  --qs-gradient-visualization-light: #f5f3ef !important;
+  --qs-gray-0: #fff !important;
+  --qs-gray-100: #f9f9fb !important;
+  --qs-gray-1000: #06080a !important;
+  --qs-gray-150: #f6f6f9 !important;
+  --qs-gray-200: #f3f3f7 !important;
+  --qs-gray-250: #e8e8ed !important;
+  --qs-gray-300: #dedee3 !important;
+  --qs-gray-350: #c9c9cf !important;
+  --qs-gray-400: #b4b4bb !important;
+  --qs-gray-450: #a0a0a8 !important;
+  --qs-gray-50: #fcfcfd !important;
+  --qs-gray-500: #8c8c94 !important;
+  --qs-gray-550: #787a82 !important;
+  --qs-gray-600: #656871 !important;
+  --qs-gray-650: #4c505a !important;
+  --qs-gray-700: #333843 !important;
+  --qs-gray-750: #272e38 !important;
+  --qs-gray-800: #1b232d !important;
+  --qs-gray-850: #171e26 !important;
+  --qs-gray-900: #131920 !important;
+  --qs-gray-950: #0f141a !important;
+  --qs-green-100: #e0f8e8 !important;
+  --qs-green-300: #93e2b0 !important;
+  --qs-green-400: #5dcb85 !important;
+  --qs-green-700: #227340 !important;
+  --qs-green-900: #1c4b2f !important;
+  --qs-grid-gap: 16px !important;
+  --qs-grid-gap-xl: 24px !important;
+  --qs-hero-banner-button-hover: color-mix(in srgb, #fff, transparent 60%) !important;
+  --qs-hover-border: #333843 !important;
+  --qs-hover-overlay: color-mix(in srgb, #151310, transparent 95%) !important;
+  --qs-indicator-hover: #aba398 !important;
+  --qs-indicator-rest: #cdc7bd !important;
+  --qs-info-inverse: #fff !important;
+  --qs-info-light: #d1f1ff !important;
+  --qs-info-medium: #003b8f !important;
+  --qs-info-soft: #75cfff !important;
+  --qs-ink-hover: #33373c !important;
+  --qs-insight-dark: #590066 !important;
+  --qs-insight-default: #a000b8 !important;
+  --qs-insight-light: #fce6ff !important;
+  --qs-insight-medium: #a000b8 !important;
+  --qs-insight-soft: #f299ff !important;
+  --qs-kernel-purple: #97529b !important;
+  --qs-kernel-raspberry: #b10054 !important;
+  --qs-kernel-violet: #6050f9 !important;
+  --qs-main-foreground: #131920 !important;
+  --qs-main-secondary-foreground: #656871 !important;
+  --qs-measure: #00802f !important;
+  --qs-measure-experimental: #f2b100 !important;
+  --qs-measure-experimental-foreground: #f2b100 !important;
+  --qs-measure-foreground: #fff !important;
+  --qs-neutral-black: #000 !important;
+  --qs-neutral-dark: #333843 !important;
+  --qs-neutral-deep: #656871 !important;
+  --qs-neutral-default: #dedee3 !important;
+  --qs-neutral-light: #f3f3f7 !important;
+  --qs-neutral-lightest: #f9f9fb !important;
+  --qs-neutral-medium: #8c8c94 !important;
+  --qs-neutral-strong: #131920 !important;
+  --qs-neutral-white: #fff !important;
+  --qs-on-fill: #fff !important;
+  --qs-option-hover: #f5f3ef !important;
+  --qs-overlay: color-mix(in srgb, #131920, transparent 50%) !important;
+  --qs-primary-inverse-foreground: #fff !important;
+  --qs-primary-soft: #b2a8ff !important;
+  --qs-red-100: #fbe6e6 !important;
+  --qs-red-300: #f1b0b0 !important;
+  --qs-red-700: #a53030 !important;
+  --qs-red-900: #732929 !important;
+  --qs-secondary: #dedee3 !important;
+  --qs-secondary-dark: #b4b4bb !important;
+  --qs-secondary-light: #f3f3f7 !important;
+  --qs-segment-fill: #fff !important;
+  --qs-selected: #e1ddd5 !important;
+  --qs-shadow: #00000029 !important;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029 !important;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029 !important;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029 !important;
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029 !important;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029 !important;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029 !important;
+  --qs-sidebar-hover: #ede9e3 !important;
+  --qs-spice: #ff9800 !important;
+  --qs-success-inverse: #fff !important;
+  --qs-success-medium: #005c26 !important;
+  --qs-success-soft: #aeffa8 !important;
+  --qs-tag-default: #dedee3 !important;
+  --qs-tag-soft-border: #b4b4bb !important;
+  --qs-toggle-selected: #ede9e3 !important;
+  --qs-toggle-selected-hover: #e1ddd5 !important;
+  --qs-toggle-selected-pressed: #cdc7bd !important;
+  --qs-toggle-tile-lg: calc(.25rem * 15) !important;
+  --qs-toggle-tile-md: calc(.25rem * 12) !important;
+  --qs-toggle-tile-sm: calc(.25rem * 8) !important;
+  --qs-tonal-destructive-bg: #fbe6e6 !important;
+  --qs-tonal-destructive-fg: #a53030 !important;
+  --qs-tonal-destructive-hover: #f4d7d7 !important;
+  --qs-tonal-destructive-pressed: #eecbcb !important;
+  --qs-transparent: transparent !important;
+  --qs-visualization-dark: #45008a !important;
+  --qs-visualization-default: #7300e5 !important;
+  --qs-visualization-light: #f2e5ff !important;
+  --qs-visualization-medium: #7300e5 !important;
+  --qs-visualization-soft: #d4a8ff !important;
+  --qs-warm-100: #f5f3ef !important;
+  --qs-warm-1000: #080705 !important;
+  --qs-warm-200: #ede9e3 !important;
+  --qs-warm-300: #e1ddd5 !important;
+  --qs-warm-400: #cdc7bd !important;
+  --qs-warm-450: #bbb4a9 !important;
+  --qs-warm-500: #aba398 !important;
+  --qs-warm-550: #928b82 !important;
+  --qs-warm-600: #6c6862 !important;
+  --qs-warm-700: #3b3731 !important;
+  --qs-warm-800: #25221c !important;
+  --qs-warm-850: #1f1d19 !important;
+  --qs-warm-900: #1a1814 !important;
+  --qs-warm-950: #151310 !important;
+  --qs-warning-experimental: #f2b100 !important;
+  --qs-warning-experimental-light: #fffbbd !important;
+  --qs-warning-experimental-light-foreground: #fffbbd !important;
+  --qs-warning-inverse: #573a00 !important;
+  --qs-warning-medium: #db9200 !important;
+  --qs-warning-soft: #ffed4d !important;
+  --qs-width-modal-lg: 1136px !important;
+  --qs-width-modal-md: 600px !important;
+  --qs-width-modal-sm: 384px !important;
+  --qs-yellow-100: #f7f3ca !important;
+  --qs-yellow-300: #e6d05e !important;
+  --qs-yellow-400: #ddbb32 !important;
+  --qs-yellow-700: #8e5f1a !important;
+  --qs-yellow-800: #764c1d !important;
+  --qs-yellow-900: #65401e !important;
+  --qs-duration-reorder: .125s !important;
+  --qs-ease-reorder: ease-in-out !important;
+  --z-subtask-modal: 10000 !important;
+  --z-above-subtask-modal: 10001 !important;
+}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 School</title>
+<meta name="author" content="นางสาววัชราภรณ์ เที่ยงอารมณ์">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Mali:wght@500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Baloo 2','Mali',sans-serif;min-height:100vh;background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 35%,#a1c4fd 70%,#c2e9fb 100%);padding:20px;color:#333}
+header{text-align:center;margin-bottom:18px}
+h1{font-size:clamp(2rem,5vw,3.4rem);color:#fff;text-shadow:3px 3px 0 #ff6b6b,6px 6px 0 #4ecdc4;letter-spacing:2px}
+.sub{font-family:'Mali';font-size:1.2rem;color:#5a3e8a;margin-top:4px}
+.controls{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:16px 0 24px}
+button{font-family:'Baloo 2','Mali';font-size:1.25rem;font-weight:800;border:none;border-radius:50px;padding:12px 26px;cursor:pointer;color:#fff;box-shadow:0 6px 0 rgba(0,0,0,.2);transition:transform .1s}
+button:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(0,0,0,.2)}
+.b1{background:#ff6b6b}.b2{background:#4ecdc4}.b3{background:#a66cff}.b4{background:#ffb703}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px;max-width:1200px;margin:0 auto}
+.card{border-radius:26px;padding:20px 10px;text-align:center;cursor:pointer;box-shadow:0 8px 0 rgba(0,0,0,.15);border:5px solid #fff;transition:transform .2s;user-select:none}
+.card:hover{transform:translateY(-6px) rotate(-2deg)}
+.card .emoji{font-size:5rem;line-height:1.2;display:block}
+.card .word{font-size:2.1rem;font-weight:800;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.25);margin-top:6px}
+.card .th{font-family:'Mali';font-size:1.05rem;color:#fff;opacity:.95}
+.card.speaking{animation:bounce .6s ease infinite;border-color:#fff700;box-shadow:0 0 0 6px #fff700,0 8px 0 rgba(0,0,0,.15)}
+@keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.1) rotate(3deg)}}
+.big{position:fixed;inset:0;background:rgba(40,20,80,.7);display:none;align-items:center;justify-content:center;z-index:9}
+.big.show{display:flex}
+.big .card{width:min(420px,85vw);padding:40px 20px;cursor:pointer}
+.big .emoji{font-size:10rem}.big .word{font-size:4rem}.big .th{font-size:1.6rem}
+.hint{text-align:center;font-family:'Mali';color:#fff;margin-top:14px;font-size:1.1rem}
+.tabs{display:flex;gap:10px;justify-content:center;margin-top:12px}
+.tab{background:#fff;color:#a66cff;font-size:1.3rem}.tab.on{background:#a66cff;color:#fff}
+#game{display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px}
+.gbar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;font-size:1.4rem;font-weight:800;color:#5a3e8a;margin-bottom:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.col{display:flex;flex-direction:column;gap:12px}
+.tile{background:#fff;border-radius:20px;padding:10px;text-align:center;cursor:pointer;border:5px solid #ffd166;box-shadow:0 6px 0 rgba(0,0,0,.12);font-weight:800;color:#3a86ff;transition:transform .15s}
+.tile.em{font-size:3rem}.tile.wd{font-size:1.9rem;display:flex;align-items:center;justify-content:center}
+.tile:hover{transform:scale(1.04)}
+.tile.sel{border-color:#a66cff;background:#f1e6ff;transform:scale(1.06)}
+.tile.ok{border-color:#06d6a0;background:#d8fff2;opacity:.6;pointer-events:none}
+.tile.bad{animation:shake .4s;border-color:#ef476f}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.win{display:none;text-align:center;font-size:2rem;font-weight:800;color:#ef476f;margin-top:16px}
+.win.show{display:block;animation:bounce .8s infinite}
+#sent{display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center}
+.sbox{background:#fff;border-radius:24px;padding:18px;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#8338ec;border:5px dashed #ffb703;cursor:pointer;margin:10px 0 20px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.opt{font-size:5rem;padding:14px 0}
+#pos{display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center}
+.scene{position:relative;height:150px;background:#fff;border-radius:20px;border:5px solid #ffd166;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.12);overflow:hidden}
+.scene:hover{transform:scale(1.03)}
+.scene .o{position:absolute;transform:translate(-50%,-50%);line-height:1}
+.scene.ok{border-color:#06d6a0;background:#d8fff2}.scene.bad{animation:shake .4s;border-color:#ef476f}
+.tbl{width:120px;height:62px}.tbl i{position:absolute;background:#a0522d;border-radius:4px}
+.tbl .tp{left:0;top:0;width:120px;height:12px}.tbl .l1{left:8px;top:10px;width:10px;height:52px}.tbl .l2{right:8px;top:10px;width:10px;height:52px}
+.ground{position:absolute;left:0;right:0;bottom:0;height:14px;background:#c7f0d8}
+#prep{display:none;max-width:1100px;margin:0 auto}
+.pcard{border-radius:26px;padding:14px;text-align:center;cursor:pointer;border:5px solid #fff;box-shadow:0 8px 0 rgba(0,0,0,.15);transition:transform .2s}
+.pcard:hover{transform:translateY(-6px) rotate(-2deg)}
+.pcard .scene{pointer-events:none;height:130px}
+.pcard .word{font-size:2.2rem;font-weight:800;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,.25);margin-top:8px}
+.pcard .th{font-family:Mali;font-size:1.2rem;color:#fff}
+.pcard .ex{font-family:Mali;font-size:1rem;color:#fff;opacity:.95;margin-top:4px}
+.pcard.speaking{animation:bounce .6s ease infinite;box-shadow:0 0 0 6px #fff700}
+#order{display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center}
+.slot{min-height:80px;background:#fff;border-radius:20px;border:5px dashed #a66cff;padding:10px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:12px 0}
+.slot.ok{border-color:#06d6a0;border-style:solid;background:#d8fff2}.slot.bad{animation:shake .4s;border-color:#ef476f}
+.chip{font-size:1.7rem;font-weight:800;color:#fff;border-radius:16px;padding:8px 16px;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.18);user-select:none}
+.chip.bad{animation:shake .4s}
+.chip:active{transform:translateY(3px)}
+.bank{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;min-height:70px}
+.starbar{display:inline-block;background:#fff;border-radius:50px;padding:6px 20px;font-size:1.5rem;font-weight:800;color:#ff8c00;margin-top:10px;box-shadow:0 5px 0 rgba(0,0,0,.12)}
+.starbar.pop{animation:bounce .5s}
+.fly{position:fixed;font-size:3rem;pointer-events:none;z-index:20;animation:fly 1s ease-out forwards}
+@keyframes fly{to{transform:translateY(-200px) scale(1.6);opacity:0}}
+.party{position:fixed;inset:0;background:rgba(40,20,80,.75);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:30;color:#fff;text-align:center;cursor:pointer}
+.party.show{display:flex}.party .big1{font-size:7rem;animation:bounce .8s infinite}.party .t{font-size:2.4rem;font-weight:800;font-family:Mali}
+.conf{position:fixed;top:-20px;font-size:2rem;z-index:31;pointer-events:none;animation:fall 2.5s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+.catbar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:10px 0 0}
+.cat{background:#fff;color:#fb5607;font-size:1.1rem;padding:8px 18px}.cat.on{background:#fb5607;color:#fff}
+.card.isnum .emoji,.tile.isnum{font-family:'Baloo 2';font-weight:800;color:#fff;text-shadow:3px 3px 0 rgba(0,0,0,.25)}
+.tile.isnum{color:#3a86ff;text-shadow:none}
+#there{display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.rule{border-radius:22px;padding:14px;color:#fff;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.15)}
+.rule h3{font-size:2rem}.rule p{font-family:Mali;font-size:1.1rem}
+.pic{background:#fff;border-radius:20px;border:5px solid #ffd166;padding:14px;font-size:3.2rem;min-height:100px;letter-spacing:6px;line-height:1.3}
+.sopt{font-size:1.6rem;padding:14px}
+@media(max-width:600px){.rules{grid-template-columns:1fr}}
+.exscene{position:relative;height:250px;border-radius:20px;overflow:hidden;border:5px solid #ffd166;margin-bottom:14px}
+.wall{position:absolute;left:0;right:0;top:0;height:45%;background:#f3c6cf}
+.floor{position:absolute;left:0;right:0;bottom:0;height:55%;background:#8fa3c7}
+.xt{position:absolute;top:52%;height:42%}
+.xt .xtop{position:absolute;left:0;right:0;top:0;height:22%;background:#a0522d;border-radius:6px}
+.xt .xl{position:absolute;top:20%;width:8%;height:80%;background:#7a3d1c}.xl.a{left:6%}.xl.b{right:6%}
+.xitems{position:absolute;bottom:47%;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:flex-end;font-size:2rem;line-height:1.1}
+.grp{background:rgba(255,255,255,.4);border-radius:10px;padding:0 4px}
+.exsent{font-size:clamp(1.2rem,3vw,1.7rem);font-weight:800;background:#fff3cd;border-radius:40px;padding:16px;line-height:2.1;color:#222}
+.exsel{font-size:1.2rem;font-family:inherit;color:#3a86ff;font-weight:800;border:3px solid #a66cff;border-radius:12px;padding:2px 6px}
+.exsel.ok{border-color:#06d6a0;background:#d8fff2}.exsel.no{border-color:#ef476f;background:#ffe0e6}
+.pl{color:#ff4fa3}.nw{color:#3a86ff}
+.bignum{font-size:6rem;font-weight:800;color:#8338ec;background:#fff;border-radius:24px;border:5px dashed #ffb703;margin-bottom:16px}
+.groups{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.grpb{font-size:1.6rem;padding:14px 30px;background:#fff;color:#ff6b6b;border:4px solid #fff}
+.grpb.on{background:#ff6b6b;color:#fff;transform:scale(1.06)}
+.tabs .tab{font-size:1.1rem;padding:9px 18px}
+.teambar{display:none;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.teambar.show{display:flex}
+.team{background:#fff;border-radius:22px;padding:8px 22px;font-size:1.5rem;font-weight:800;border:5px solid transparent;box-shadow:0 5px 0 rgba(0,0,0,.12);transition:transform .2s}
+.team.A{color:#ef476f}.team.B{color:#3a86ff}
+.team.turn{transform:scale(1.12)}.team.A.turn{border-color:#ef476f;background:#ffe0e6}.team.B.turn{border-color:#3a86ff;background:#e0edff}
+.team .pt{font-size:2rem}
+.tbtn{font-size:1rem;padding:6px 14px}
+.namebox{position:fixed;inset:0;background:linear-gradient(135deg,#ffecd2,#fcb69f,#a1c4fd);display:flex;align-items:center;justify-content:center;z-index:50}
+.namebox.hide{display:none}
+.namecard{background:#fff;border-radius:30px;padding:30px;text-align:center;box-shadow:0 10px 0 rgba(0,0,0,.15);width:min(460px,90vw)}
+.namecard h2{font-size:2.2rem;color:#8338ec}.namecard p{font-family:Mali;color:#5a3e8a;margin:8px 0 16px}
+.namecard input{font-family:Mali;font-size:1.6rem;text-align:center;width:100%;padding:12px;border:4px solid #ffb703;border-radius:20px;outline:none}
+.namecard input:focus{border-color:#a66cff}
+.hello{display:inline-block;background:#fff;border-radius:50px;padding:6px 18px;font-size:1.3rem;font-weight:800;color:#06d6a0;margin:10px 6px 0;box-shadow:0 5px 0 rgba(0,0,0,.12);font-family:Mali}
+.rep{position:fixed;inset:0;background:rgba(40,20,80,.75);display:none;align-items:flex-start;justify-content:center;z-index:40;overflow:auto;padding:20px}
+.rep.show{display:flex}
+.repcard{background:#fff;border-radius:30px;padding:24px;width:min(760px,96vw);box-shadow:0 10px 0 rgba(0,0,0,.2)}
+.repcard h2{text-align:center;color:#8338ec;font-size:2rem}
+.sumrow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.sum{border-radius:20px;padding:12px;text-align:center;color:#fff;font-weight:800}
+.sum b{display:block;font-size:2.2rem}.sum span{font-family:Mali;font-size:1rem}
+.gr{display:grid;grid-template-columns:150px 1fr 120px;gap:10px;align-items:center;margin:10px 0;font-family:Mali}
+.gr .nm{font-weight:700;color:#5a3e8a}
+.bar{height:26px;background:#eee;border-radius:20px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:20px;transition:width .8s}
+.gr .st{font-size:.95rem;color:#555;text-align:right}
+.tipbox{background:#fff3cd;border-radius:18px;padding:12px;font-family:Mali;margin-top:14px;color:#5a3e8a}
+@media(max-width:600px){.gr{grid-template-columns:1fr}.gr .st{text-align:left}.sumrow{grid-template-columns:1fr}}
+.ctab{width:100%;border-collapse:collapse;font-family:Mali;font-size:1rem;margin-top:12px}
+.ctab th{background:#a66cff;color:#fff;padding:8px;position:sticky;top:0}
+.ctab td{padding:7px;border-bottom:2px solid #f1e6ff;text-align:center}
+.ctab tr:nth-child(even) td{background:#faf6ff}
+.ctab tr.me td{background:#fff3cd;font-weight:700}
+.pcx{display:inline-block;min-width:52px;border-radius:12px;padding:2px 8px;color:#fff;font-weight:700}
+.tabwrap{max-height:55vh;overflow:auto;border-radius:16px}
+.dv{font-size:5rem;display:block;transition:filter .4s,opacity .4s}
+.dv.off{filter:grayscale(1) brightness(.7);opacity:.55}
+.dv.on{filter:drop-shadow(0 0 14px #fff700)}
+.cmdcard{border-radius:26px;padding:16px;text-align:center;border:5px solid #fff;box-shadow:0 8px 0 rgba(0,0,0,.15);color:#fff}
+.cmdcard .word{font-size:1.9rem;font-weight:800;text-shadow:2px 2px 0 rgba(0,0,0,.25)}
+.cmdcard .btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.cmdcard button{font-size:1rem;padding:8px 14px}
+.cmdcard .ex{font-family:Mali;margin-top:8px;min-height:1.4em}
+.lamp{font-size:1.2rem;font-weight:800;border-radius:12px;padding:2px 10px;background:#fff;display:inline-block;margin-top:4px}
+.flow{display:flex;align-items:center;justify-content:center;gap:24px;background:#fff;border-radius:24px;border:5px solid #ffd166;padding:16px;margin-bottom:16px}
+.flow .arr{font-size:3rem}.flow .lab{font-family:Mali;font-weight:700;color:#5a3e8a}
+.sign{position:relative;width:120px;height:120px;margin:0 auto;border-radius:50%;border:12px solid #e63946;background:#fff;display:flex;align-items:center;justify-content:center;font-size:3.6rem;overflow:hidden}
+.sign::after{content:"";position:absolute;width:140%;height:12px;background:#e63946;transform:rotate(-45deg)}
+.sign.sm{width:90px;height:90px;font-size:2.6rem;border-width:9px}.sign.sm::after{height:9px}
+.signcard{border-radius:26px;padding:16px;text-align:center;border:5px solid #fff;box-shadow:0 8px 0 rgba(0,0,0,.15);cursor:pointer;color:#fff;transition:transform .2s}
+.signcard:hover{transform:translateY(-6px) rotate(-2deg)}
+.signcard .word{font-size:1.9rem;font-weight:800;text-shadow:2px 2px 0 rgba(0,0,0,.25);margin-top:8px}
+.signcard .th{font-family:Mali;font-size:1.1rem}.signcard .ex{font-family:Mali;font-size:.95rem;opacity:.95;margin-top:4px}
+.signcard.speaking{animation:bounce .6s ease infinite;box-shadow:0 0 0 6px #fff700}
+.sopt2{padding:12px}
+.clk{display:block;margin:0 auto}
+.tbig{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:#8338ec;background:#fff;border-radius:24px;border:5px dashed #ffb703;padding:10px;margin:12px auto;max-width:560px;cursor:pointer}
+.tctl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.tctl button{font-size:1rem;padding:8px 14px}
+.pods{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.pod{border-radius:20px;padding:12px;color:#fff;text-align:center;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.15)}
+.pod b{display:block;font-size:2.6rem}.pod span{font-weight:800;font-size:1.2rem}.pod i{display:block;font-family:Mali;font-style:normal}
+.hands{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;font-family:Mali;margin-top:8px}
+.hands span{background:#fff;border-radius:14px;padding:4px 12px;font-weight:700}
+@media(max-width:600px){.pods{grid-template-columns:1fr 1fr}}
+.catbar{flex-direction:column;align-items:center;gap:8px;background:rgba(255,255,255,.45);border-radius:24px;padding:12px 16px;max-width:900px;margin:14px auto 0}
+.catbar:not([style*="none"]){display:flex}
+.catlab{font-family:Mali;font-weight:700;color:#5a3e8a;font-size:1.1rem}
+.catrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center}
+.catgrp{font-family:Mali;font-weight:700;color:#fff;background:#8338ec;border-radius:14px;padding:4px 12px;font-size:.95rem}
+.cat .cnt{display:inline-block;background:rgba(0,0,0,.12);border-radius:10px;padding:0 7px;margin-left:4px;font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="namebox" id="namebox"><div class="namecard">
+<div style="font-size:4rem">👋</div><h2>Hello! What's your name?</h2><p>พิมพ์ชื่อของหนู แล้วกดเริ่มเลย</p>
+<input id="nameIn" maxlength="20" placeholder="เช่น น้องมิ้นท์ / Mint" onkeydown="if(event.key=='Enter')saveName()">
+<div class="controls" style="margin-top:18px;margin-bottom:0"><button class="b1" onclick="saveName()">🚀 เริ่มเลย</button></div>
+<p style="font-family:Mali;font-size:.9rem;color:#999;margin-top:14px">ออกแบบโดย นางสาววัชราภรณ์ เที่ยงอารมณ์</p>
+</div></div>
+<header>
+<h1>🎒 Unit 3 School 📚</h1>
+<div class="sub">แตะการ์ดเพื่อฟังเสียงคำศัพท์ 🔊</div>
+<div class="hello" id="hello"></div>
+<button class="b1 tbtn" style="margin:10px 6px 0" onclick="showReport()">📊 สรุปคะแนน</button>
+<button class="b3 tbtn" style="margin:10px 6px 0" onclick="showClass()">🏫 ตารางคะแนนทั้งห้อง</button>
+<div class="starbar" id="starbar">⭐ ดาวสะสม: <span id="stars">0</span> <span id="badge"></span> <button class="b4" style="font-size:.9rem;padding:4px 12px" onclick="resetStars()">รีเซ็ต</button></div>
+<div class="groups">
+<button class="grpb on" id="g1" onclick="setGroup(1)">📚 เรียนคำศัพท์</button>
+<button class="grpb" id="g2" onclick="setGroup(2)">🎮 เกม</button>
+<button class="grpb" id="g3" onclick="setGroup(3)">📝 แบบฝึกหัด</button>
+</div>
+<div class="tabs">
+<button class="tab on" id="t1" onclick="mode(1)">🃏 บัตรคำ</button>
+<button class="tab" id="t2" onclick="mode(2)">🧩 เกมจับคู่</button>
+<button class="tab" id="t3" onclick="mode(3)">📝 ประโยคกับภาพ</button>
+<button class="tab" id="t11" onclick="mode(11)">🗣️ Classroom Language</button>
+<button class="tab" id="t13" onclick="mode(13)">🚫 School Signs</button>
+<button class="tab" id="t15" onclick="mode(15)">🕐 Time</button>
+<button class="tab" id="t18" onclick="mode(18)">📚 School Subjects</button>
+<button class="tab" id="t5" onclick="mode(5)">📍 คำบอกตำแหน่ง</button>
+<button class="tab" id="t4" onclick="mode(4)">🐱 เกมบอกตำแหน่ง</button>
+<button class="tab" id="t6" onclick="mode(6)">🧱 เรียงประโยค</button>
+<button class="tab" id="t7" onclick="mode(7)">🔎 There is / are</button>
+<button class="tab" id="t8" onclick="mode(8)">🧮 นับของ</button>
+<button class="tab" id="t12" onclick="mode(12)">🔌 Turn on / off</button>
+<button class="tab" id="t14" onclick="mode(14)">🚸 Match the Signs</button>
+<button class="tab" id="t16" onclick="mode(16)">⏰ What time is it?</button>
+<button class="tab" id="t17" onclick="mode(17)">🌞 My Wonderful Day</button>
+<button class="tab" id="t19" onclick="mode(19)">💖 Favorite Subject</button>
+<button class="tab" id="t20" onclick="mode(20)">🙋 Find Someone Who</button>
+<button class="tab" id="t9" onclick="mode(9)">❓ How Many?</button>
+<button class="tab" id="t10" onclick="mode(10)">🔡 เติมตัวอักษร</button>
+</div>
+<div class="catbar" id="catbar">
+<div class="catlab">📂 เลือกหมวดคำศัพท์</div>
+<div class="catrow">
+<button class="cat on" data-c="all" onclick="setCat('all')">🌈 ทั้งหมด</button>
+</div>
+<div class="catrow">
+<span class="catgrp">🏫 โรงเรียน</span>
+<button class="cat" data-c="st" onclick="setCat('st')">✏️ อุปกรณ์การเรียน</button>
+<button class="cat" data-c="cl" onclick="setCat('cl')">🪑 ในห้องเรียน</button>
+<button class="cat" data-c="dev" onclick="setCat('dev')">🔌 เครื่องใช้ไฟฟ้า</button>
+<button class="cat" data-c="sb" onclick="setCat('sb')">📚 วิชาเรียน</button>
+</div>
+<div class="catrow">
+<span class="catgrp">🌍 อื่น ๆ</span>
+<button class="cat" data-c="pl" onclick="setCat('pl')">🏞️ สถานที่</button>
+<button class="cat" data-c="num" onclick="setCat('num')">🔢 ตัวเลข 1-100</button>
+</div>
+</div>
+</header>
+<div id="cardsView">
+<div class="controls">
+<button class="b1" onclick="randomCard()">🎲 สุ่มการ์ด</button>
+<button class="b2" onclick="playAll()">🔊 ฟังเสียงทั้งหมด</button>
+<button class="b3" onclick="shuffleGrid()">🔀 สลับการ์ด</button>
+<button class="b4" onclick="stopAll()">⏹️ หยุด</button>
+</div>
+<div class="grid" id="grid"></div>
+</div>
+<div id="game">
+<div class="gbar">
+<span>⭐ คะแนน: <span id="score">0</span></span>
+<span>🎯 คู่ที่เหลือ: <span id="left">0</span></span>
+<button class="b2" onclick="newRound()">🔄 รอบใหม่</button>
+</div>
+<p style="text-align:center;font-family:Mali;color:#5a3e8a;margin-bottom:12px">แตะรูปทางซ้าย แล้วแตะคำที่ตรงกันทางขวา</p>
+<div class="cols"><div class="col" id="colE"></div><div class="col" id="colW"></div></div>
+<div class="win" id="win">🎉 เก่งมาก! Great job! 🎉</div>
+</div>
+<div id="sent">
+<div class="gbar"><span>⭐ คะแนน: <span id="sscore">0</span></span><span>📖 ข้อ: <span id="snum">1</span>/10</span><button class="b2" onclick="newSent(true)">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">อ่านประโยค (แตะเพื่อฟังเสียง 🔊) แล้วเลือกภาพที่ตรงกับประโยค</p>
+<div class="sbox" id="sbox" onclick="sayWord(curS.s)"></div>
+<div class="opts" id="opts"></div>
+<div class="win" id="swin"></div>
+</div>
+<div id="prep">
+<div class="controls"><button class="b2" onclick="playPreps()">🔊 ฟังเสียงทั้งหมด</button><button class="b4" onclick="stopAll()">⏹️ หยุด</button></div>
+<div class="grid" id="pgrid"></div>
+</div>
+<div id="pos">
+<div class="gbar"><span>⭐ คะแนน: <span id="pscore">0</span></span><span>📖 ข้อ: <span id="pnum">1</span>/<span id="ptot">7</span></span><button class="b2" onclick="startPos()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">อ่านประโยค (แตะเพื่อฟังเสียง 🔊) แล้วเลือกภาพที่ตรงกับประโยค</p>
+<div class="sbox" id="pbox" onclick="sayWord(curP.s,.75)"></div>
+<div class="opts" id="popts"></div>
+<div class="win" id="pwin"></div>
+</div>
+<div id="order">
+<div class="gbar"><span>⭐ คะแนน: <span id="oscore">0</span></span><span>📖 ข้อ: <span id="onum">1</span>/<span id="otot">0</span></span><button class="b2" onclick="startOrder()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">ดูภาพ แล้วแตะคำเรียงให้เป็นประโยค (แตะคำในช่องเพื่อเอาออก)</p>
+<div class="scene" id="oscene" style="max-width:320px;margin:0 auto;cursor:default"></div>
+<div class="slot" id="oslot"></div>
+<div class="bank" id="obank"></div>
+<div class="controls"><button class="b3" onclick="sayWord(curO.s,.75)">💡 ฟังคำใบ้</button><button class="b1" onclick="checkOrder()">✅ ตรวจคำตอบ</button></div>
+<div class="win" id="owin"></div>
+</div>
+<div id="there">
+<div class="rules">
+<div class="rule" style="background:#ff6b6b" onclick="sayWord('There is one book.',.75)"><h3>There is</h3><p>ใช้กับของ <b>1 ชิ้น</b> (เอกพจน์)</p><p>🔊 There is <b>one</b> book. 📕</p></div>
+<div class="rule" style="background:#3a86ff" onclick="sayWord('There are three books.',.75)"><h3>There are</h3><p>ใช้กับของ <b>2 ชิ้นขึ้นไป</b> (พหูพจน์ เติม s)</p><p>🔊 There are <b>three</b> books. 📕📕📕</p></div>
+</div>
+<div class="gbar"><span>⭐ คะแนน: <span id="tscore">0</span></span><span>📖 ข้อ: <span id="tnum">1</span>/10</span><button class="b2" onclick="startThere()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">นับของในภาพ แล้วเลือกประโยคที่ถูกต้อง</p>
+<div class="pic" id="tpic"></div>
+<div class="col" id="topts" style="margin-top:16px"></div>
+<div class="win" id="twin"></div>
+</div>
+<div id="ex" style="display:none;max-width:950px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="exscore">0</span></span><span>📖 ข้อ: <span id="exnum">1</span>/10</span><button class="b2" onclick="startEx()">🔄 เริ่มใหม่</button></div>
+<p id="exhint" style="font-family:Mali;color:#5a3e8a;font-size:1.2rem;margin-bottom:10px"></p>
+<div id="exbox"></div>
+<div class="win" id="exwin"></div>
+</div>
+<div id="hm" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="hmscore">0</span></span><span>📖 ข้อ: <span id="hmnum">1</span>/10</span><button class="b2" onclick="startHM()">🔄 เริ่มใหม่</button></div>
+<div class="sbox" id="hmq" onclick="sayWord(hmCur.q,.75)"></div>
+<div class="pic" id="hmpic"></div>
+<p style="font-family:Mali;color:#5a3e8a;margin:10px 0">B: เลือกคำตอบที่ถูกต้อง</p>
+<div class="col" id="hmopts"></div>
+<div class="win" id="hmwin"></div>
+</div>
+<div id="ml" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="mlscore">0</span></span><span>📖 ข้อ: <span id="mlnum">1</span>/<span id="mltot">13</span></span><button class="b2" onclick="startML()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">ดูภาพ แล้วเลือกตัวอักษรที่หายไป</p>
+<div style="font-size:6rem" id="mlpic"></div>
+<div class="bignum" id="mlword" style="font-size:3.4rem;letter-spacing:6px;padding:10px;cursor:pointer" onclick="sayWord(mlCur.w,.75)"></div>
+<div class="bank" id="mlbank"></div>
+<div class="win" id="mlwin"></div>
+</div>
+<div class="rep" id="rep" onclick="if(event.target==this)this.classList.remove('show')"><div class="repcard" id="repcard"></div></div>
+<div id="cl" style="display:none;max-width:1100px;margin:0 auto">
+<div class="rules" style="max-width:800px;margin:0 auto 18px">
+<div class="rule" style="background:#06d6a0" onclick="sayWord('Turn on',.75)"><h3>Turn on 🟢</h3><p>เปิด (ทำให้ทำงาน)</p></div>
+<div class="rule" style="background:#ef476f" onclick="sayWord('Turn off',.75)"><h3>Turn off 🔴</h3><p>ปิด (ทำให้หยุดทำงาน)</p></div>
+</div>
+<p style="text-align:center;font-family:Mali;color:#fff;font-size:1.2rem;margin-bottom:12px">กดปุ่ม Turn on / Turn off เพื่อฟังประโยคคำสั่ง และดูเครื่องใช้ไฟฟ้าเปิด–ปิด 🔌</p>
+<div class="grid" id="clgrid"></div>
+</div>
+<div id="tof" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="tofscore">0</span></span><span>📖 ข้อ: <span id="tofnum">1</span>/10</span><button class="b2" onclick="startTof()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a;margin-bottom:10px">ดูภาพก่อน ➡️ หลัง แล้วเลือกคำสั่งที่ถูกต้อง</p>
+<div class="flow" id="tofflow"></div>
+<div class="col" id="tofopts"></div>
+<div class="win" id="tofwin"></div>
+</div>
+<div id="sg" style="display:none;max-width:1100px;margin:0 auto">
+<div class="rules" style="max-width:800px;margin:0 auto 18px">
+<div class="rule" style="background:#e63946" onclick="sayWord('What is the sign? No smoking.',.75)"><h3>No + Verb-ing</h3><p>ป้ายห้าม = No + คำกริยาเติม ing</p><p>🔊 No smok<b>ing</b> = ห้ามสูบบุหรี่</p></div>
+<div class="rule" style="background:#8338ec" onclick="sayWord('What is the sign?',.75)"><h3>What's the sign?</h3><p>นี่คือป้ายอะไร?</p><p>แตะการ์ดเพื่อฟังเสียง 🔊</p></div>
+</div>
+<div class="grid" id="sggrid"></div>
+</div>
+<div id="ms" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="msscore">0</span></span><span>📖 ข้อ: <span id="msnum">1</span>/10</span><button class="b2" onclick="startMS()">🔄 เริ่มใหม่</button></div>
+<p id="mshint" style="font-family:Mali;color:#5a3e8a;font-size:1.2rem;margin-bottom:10px"></p>
+<div id="msq" style="margin-bottom:16px"></div>
+<div class="opts" id="msopts"></div>
+<div class="win" id="mswin"></div>
+</div>
+<div id="tm" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div id="tmclock"></div>
+<div class="hands"><span style="color:#ef476f">🔴 hour hand = เข็มสั้น (ชั่วโมง)</span><span style="color:#3a86ff">🔵 minute hand = เข็มยาว (นาที)</span><span style="color:#ffb703">🟡 second hand = เข็มวินาที</span></div>
+<div class="tbig" id="tmtxt" onclick="sayTime()"></div>
+<div class="tctl"><button class="b1" onclick="tmAdd(-60)">⏪ −1 ชม.</button><button class="b1" onclick="tmAdd(60)">+1 ชม. ⏩</button><button class="b2" onclick="tmAdd(-5)">−5 นาที</button><button class="b2" onclick="tmAdd(5)">+5 นาที</button><button class="b3" onclick="tmRand()">🎲 สุ่มเวลา</button><button class="b4" onclick="sayTime()">🔊 ฟัง</button></div>
+<div class="pods" id="pods"></div>
+</div>
+<div id="wt" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="wtscore">0</span></span><span>📖 ข้อ: <span id="wtnum">1</span>/10</span><button class="b2" onclick="startWT()">🔄 เริ่มใหม่</button></div>
+<div class="sbox" onclick="sayWord('What time is it?',.8)">🔊 A: What time is it?</div>
+<div id="wtclock"></div>
+<p style="font-family:Mali;color:#5a3e8a;margin:10px 0">B: เลือกคำตอบที่ถูกต้อง</p>
+<div class="col" id="wtopts"></div>
+<div class="win" id="wtwin"></div>
+</div>
+<div id="wd" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="wdscore">0</span></span><span>📖 ข้อ: <span id="wdnum">1</span>/<span id="wdtot">6</span></span><button class="b2" onclick="startWD()">🔄 เริ่มใหม่</button></div>
+<p style="font-family:Mali;color:#5a3e8a">ดูภาพและนาฬิกา แล้วเลือกเวลาและช่วงเวลาให้ถูกต้อง</p>
+<div style="display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap;margin:10px 0"><div style="font-size:6rem" id="wdpic"></div><div id="wdclock"></div></div>
+<div class="exsent" id="wdsent"></div>
+<div class="controls"><button class="b1" onclick="checkWD()">✅ ตรวจคำตอบ</button></div>
+<div class="win" id="wdwin"></div>
+</div>
+<div id="sj" style="display:none;max-width:1000px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<p style="font-family:Mali;color:#5a3e8a;font-size:1.2rem">แตะวิชาเพื่อเลือก แล้วกดปุ่มฝึกพูด 🔊</p>
+<div class="opts" id="sjgrid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))"></div>
+<div class="tbig" id="sjq" style="margin-top:18px">A: Do you like <span class="nw" id="sjname">English</span>?</div>
+<div class="tctl"><button class="b3" onclick="sjAsk()">🔊 A: Do you like ...?</button><button class="b2" onclick="sjSay('Yes, I do.')">👍 Yes, I do.</button><button class="b1" onclick="sjSay('No, I don\'t.')">👎 No, I don't.</button><button class="b4" onclick="sjFav()">💖 My favorite subject is ...</button></div>
+<div class="exsent" id="sjans" style="margin-top:10px;min-height:60px"></div>
+</div>
+<div id="fs" style="display:none;max-width:900px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<div class="gbar"><span>⭐ คะแนน: <span id="fsscore">0</span></span><span>📖 ข้อ: <span id="fsnum">1</span>/10</span><button class="b2" onclick="startFS()">🔄 เริ่มใหม่</button></div>
+<p id="fshint" style="font-family:Mali;color:#5a3e8a;font-size:1.2rem;margin-bottom:10px"></p>
+<div id="fsq"></div>
+<div class="opts" id="fsopts" style="margin-top:14px"></div>
+<div class="win" id="fswin"></div>
+</div>
+<div id="fw" style="display:none;max-width:1000px;margin:0 auto;background:rgba(255,255,255,.55);border-radius:30px;padding:20px;text-align:center">
+<h2 style="color:#8338ec">🙋 Find Someone Who...</h2>
+<p style="font-family:Mali;color:#5a3e8a;margin-bottom:10px">เดินถามเพื่อน 🔊 <b style="cursor:pointer" onclick="sayWord('What is your favorite subject?',.75)">"What is your favorite subject?"</b> แล้วใส่ชื่อเพื่อนและวิชาที่เพื่อนชอบ</p>
+<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;align-items:center">
+<input id="fwname" maxlength="20" placeholder="ชื่อเพื่อน เช่น Mint" style="font-family:Mali;font-size:1.3rem;padding:8px 14px;border:4px solid #ffb703;border-radius:16px;width:220px" onkeydown="if(event.key=='Enter')fwAdd()">
+<select id="fwsub" class="exsel" style="font-size:1.3rem"></select>
+<button class="b1" onclick="fwAdd()">➕ เพิ่ม</button></div>
+<div class="tabwrap" style="margin-top:14px"><table class="ctab" id="fwtab"></table></div>
+<h3 style="color:#5a3e8a;margin-top:16px">✍️ ประโยคเกี่ยวกับเพื่อน</h3>
+<div class="exsent" id="fwsent" style="text-align:left;font-size:1.3rem;line-height:1.9"></div>
+<div class="controls" style="margin-top:12px"><button class="b2" onclick="fwReadAll()">🔊 อ่านทั้งหมด</button><button class="b4" onclick="if(confirm('ล้างรายชื่อทั้งหมด?')){fwList=[];fwSave();fwDraw()}">🗑️ ล้าง</button></div>
+</div>
+<div class="party" id="party" onclick="this.classList.remove('show')"><div class="big1" id="pbig">🏆</div><div class="t" id="ptxt"></div><div style="font-family:Mali;margin-top:10px">แตะเพื่อเล่นต่อ</div></div>
+<div class="big" id="big" onclick="closeBig()"></div>
+
+<script>
+const nums=Array.from({length:100},(_,i)=>numWord(i+1));let numsList=[];
+let words=[
+{w:"bag",e:"🎒",t:"กระเป๋า"},{w:"book",e:"📖",t:"หนังสือ"},{w:"pen",e:"🖊️",t:"ปากกา"},
+{w:"ruler",e:"📏",t:"ไม้บรรทัด"},{w:"pencil",e:"✏️",t:"ดินสอ"},{w:"table",e:"🪑",t:"โต๊ะ",alt:"🟫"},
+{w:"chair",e:"🪑",t:"เก้าอี้"},{w:"eraser",e:"🧽",t:"ยางลบ"},{w:"pencil case",e:"👝",t:"กล่องดินสอ"},
+{w:"notebook",e:"📓",t:"สมุด"},{w:"crayon",e:"🖍️",t:"สีเทียน"},{w:"picture",e:"🖼️",t:"รูปภาพ"},
+{w:"sharpener",e:"🔪",t:"กบเหลาดินสอ"},
+{w:"scissors",e:"✂️",t:"กรรไกร"},{w:"glue",e:"🧴",t:"กาว"},{w:"clock",e:"🕰️",t:"นาฬิกา"},
+{w:"door",e:"🚪",t:"ประตู"},{w:"window",e:"🪟",t:"หน้าต่าง"},{w:"computer",e:"🖥️",t:"คอมพิวเตอร์"},
+{w:"teacher",e:"🧑‍🏫",t:"ครู"},{w:"student",e:"🧑‍🎓",t:"นักเรียน"},{w:"globe",e:"🌏",t:"ลูกโลก"},
+{w:"paper",e:"📄",t:"กระดาษ"},{w:"paint",e:"🎨",t:"สีน้ำ"},{w:"calculator",e:"🧮",t:"เครื่องคิดเลข"},
+{w:"Thai",e:"🇹🇭",t:"ภาษาไทย",sb:1},{w:"English",e:"🔤",t:"ภาษาอังกฤษ",sb:1},{w:"music",e:"🎵",t:"ดนตรี",sb:1},{w:"art",e:"🎨",t:"ศิลปะ",sb:1},{w:"science",e:"🔬",t:"วิทยาศาสตร์",sb:1},{w:"social studies",e:"🌏",t:"สังคมศึกษา",sb:1},{w:"P.E.",e:"⚽",t:"พลศึกษา",sb:1},{w:"math",e:"➗",t:"คณิตศาสตร์",sb:1},
+{w:"park",e:"🏞️",t:"สวนสาธารณะ",pl:1},{w:"school",e:"🏫",t:"โรงเรียน",pl:1},{w:"museum",e:"🏛️",t:"พิพิธภัณฑ์",pl:1},{w:"cinema",e:"🎬",t:"โรงภาพยนตร์",pl:1},{w:"road",e:"🛣️",t:"ถนน",pl:1},{w:"test room",e:"📝",t:"ห้องสอบ",pl:1},
+{w:"light",e:"💡",t:"ไฟ / หลอดไฟ",d:1},{w:"television",e:"📺",t:"โทรทัศน์",d:1},{w:"radio",e:"📻",t:"วิทยุ",d:1},{w:"laptop",e:"💻",t:"แล็ปท็อป",d:1},{w:"CD player",e:"💿",t:"เครื่องเล่นซีดี",d:1},{w:"fan",e:"🌀",t:"พัดลม",d:1},
+{w:"one",e:"1",t:"หนึ่ง",n:1},
+{w:"two",e:"2",t:"สอง",n:1},
+{w:"three",e:"3",t:"สาม",n:1},
+{w:"four",e:"4",t:"สี่",n:1},
+{w:"five",e:"5",t:"ห้า",n:1},
+{w:"six",e:"6",t:"หก",n:1},
+{w:"seven",e:"7",t:"เจ็ด",n:1},
+{w:"eight",e:"8",t:"แปด",n:1},
+{w:"nine",e:"9",t:"เก้า",n:1},
+{w:"ten",e:"10",t:"สิบ",n:1},
+{w:"eleven",e:"11",t:"สิบเอ็ด",n:1},
+{w:"twelve",e:"12",t:"สิบสอง",n:1},
+{w:"thirteen",e:"13",t:"สิบสาม",n:1},
+{w:"fourteen",e:"14",t:"สิบสี่",n:1},
+{w:"fifteen",e:"15",t:"สิบห้า",n:1},
+{w:"sixteen",e:"16",t:"สิบหก",n:1},
+{w:"seventeen",e:"17",t:"สิบเจ็ด",n:1},
+{w:"eighteen",e:"18",t:"สิบแปด",n:1},
+{w:"nineteen",e:"19",t:"สิบเก้า",n:1},
+{w:"twenty",e:"20",t:"ยี่สิบ",n:1}];
+words[5].e="🍽️"; // table
+words[12].e="⚙️"; // sharpener
+const colors=["#ff6b6b","#4ecdc4","#ffb703","#a66cff","#06d6a0","#ff8fab","#3a86ff","#fb5607","#8338ec","#2ec4b6","#ef476f","#ffd166","#00b4d8"];
+let order=words.map((_,i)=>i), stopFlag=false;
+const grid=document.getElementById('grid');
+
+function cardHTML(i){const x=words[i];return `<span class="emoji">${x.e}</span><div class="word">${x.w}</div><div class="th">${x.t}</div>`}
+function render(){grid.innerHTML="";order.forEach((i,k)=>{const d=document.createElement('div');d.className='card';d.id='c'+i;d.style.background=colors[i%colors.length];d.innerHTML=cardHTML(i);d.onclick=()=>{stopAll();speak(i)};grid.appendChild(d)})}
+
+function getVoice(){const v=speechSynthesis.getVoices();return v.find(x=>/en-US/i.test(x.lang)&&/female|samantha|zira|google/i.test(x.name))||v.find(x=>/^en/i.test(x.lang))}
+function speak(i){return new Promise(res=>{
+ document.querySelectorAll('.speaking').forEach(c=>c.classList.remove('speaking'));
+ const el=document.getElementById('c'+i);el&&el.classList.add('speaking');
+ const bigc=document.querySelector('#big .card');bigc&&bigc.classList.add('speaking');
+ const u=new SpeechSynthesisUtterance(words[i].w);u.lang='en-US';u.rate=0.75;u.pitch=1.2;const v=getVoice();if(v)u.voice=v;
+ u.onend=u.onerror=()=>{el&&el.classList.remove('speaking');bigc&&bigc.classList.remove('speaking');res()};
+ speechSynthesis.speak(u)})}
+
+async function playAll(){stopAll();stopFlag=false;await new Promise(r=>setTimeout(r,100));
+ for(const i of order){if(stopFlag)break;document.getElementById('c'+i).scrollIntoView({behavior:'smooth',block:'center'});await speak(i);await new Promise(r=>setTimeout(r,500))}}
+function stopAll(){stopFlag=true;speechSynthesis.cancel();document.querySelectorAll('.speaking').forEach(c=>c.classList.remove('speaking'))}
+function randomCard(){stopAll();const i=Math.floor(Math.random()*words.length);const b=document.getElementById('big');
+ b.innerHTML=`<div class="card" style="background:${colors[i%colors.length]}" onclick="event.stopPropagation();speak(${i})">${cardHTML(i)}</div><div></div>`;
+ b.classList.add('show');setTimeout(()=>speak(i),200)}
+function closeBig(){document.getElementById('big').classList.remove('show')}
+function shuffleGrid(){stopAll();order.sort(()=>Math.random()-.5);render()}
+speechSynthesis.onvoiceschanged=getVoice;
+// ===== Matching game =====
+let score=0,left=0,selE=null,selW=null;
+function mode(m){stopAll();document.getElementById('cardsView').style.display=m==1?'':'none';document.getElementById('game').style.display=m==2?'block':'none';document.getElementById('sent').style.display=m==3?'block':'none';document.getElementById('pos').style.display=m==4?'block':'none';document.getElementById('prep').style.display=m==5?'block':'none';document.getElementById('order').style.display=m==6?'block':'none';document.getElementById('there').style.display=m==7?'block':'none';
+ [1,2,3,4,5,6,7].forEach(k=>document.getElementById('t'+k).classList.toggle('on',m==k));if(m==2&&!left)newRound();if(m==3&&!curS)newSent(true);if(m==4&&!curP)startPos();if(m==5)renderPreps();if(m==6&&!curO)startOrder();if(m==7&&!tCur)startThere()}
+function sayWord(t,rate=.8){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t=='Try again'?'Oops!':t);u.lang='en-US';u.rate=rate;u.pitch=1.2;const v=getVoice();if(v)u.voice=v;speechSynthesis.speak(u)}
+function newRound(){selE=selW=null;document.getElementById('win').classList.remove('show');
+ const pick=words.map((_,i)=>i).sort(()=>Math.random()-.5).slice(0,6);left=pick.length;document.getElementById('left').textContent=left;
+ const ce=document.getElementById('colE'),cw=document.getElementById('colW');ce.innerHTML=cw.innerHTML='';
+ [...pick].sort(()=>Math.random()-.5).forEach(i=>{const d=document.createElement('div');d.className='tile em'+(words[i].n?' isnum':'');d.textContent=words[i].e;d.dataset.i=i;d.onclick=()=>pickTile(d,'E');ce.appendChild(d)});
+ [...pick].sort(()=>Math.random()-.5).forEach(i=>{const d=document.createElement('div');d.className='tile wd';d.textContent=words[i].w;d.dataset.i=i;d.onclick=()=>pickTile(d,'W');cw.appendChild(d)})}
+function pickTile(d,side){
+ if(side=='E'){selE&&selE.classList.remove('sel');selE=d}else{selW&&selW.classList.remove('sel');selW=d;sayWord(words[d.dataset.i].w)}
+ d.classList.add('sel');
+ if(selE&&selW){const a=selE,b=selW;selE=selW=null;
+  if(a.dataset.i==b.dataset.i){[a,b].forEach(x=>{x.classList.remove('sel');x.classList.add('ok')});
+   score+=qPts();left--;addStar(d||a);document.getElementById('score').textContent=score;document.getElementById('left').textContent=left;
+   setTimeout(()=>sayWord(words[a.dataset.i].w+'! Correct!'),300);
+   if(!left)setTimeout(()=>{document.getElementById('win').classList.add('show');sayWord('Great job!',.9)},1300)}
+  else{[a,b].forEach(x=>{x.classList.remove('sel');x.classList.add('bad');setTimeout(()=>x.classList.remove('bad'),400)});setTimeout(()=>sayWord('Try again',.9),300);const cw=document.getElementById('colW');cw.parentNode.style.pointerEvents='none';setTimeout(()=>{const w=[...cw.children].find(x=>x.dataset.i==a.dataset.i);cw.parentNode.style.pointerEvents='';pickTile(a,'E');pickTile(w,'W')},1000)}}}
+// ===== Sentence-picture game =====
+const sents={"bag":["This is a bag.","I have a red bag.","My bag is big."],"book":["This is a book.","I read a book.","The book is on the table."],
+"pen":["This is a pen.","I write with a pen.","I have a blue pen."],"ruler":["This is a ruler.","The ruler is long.","I draw a line with a ruler."],
+"pencil":["This is a pencil.","I have a pencil.","I write with a pencil."],"table":["This is a table.","The book is on the table.","The table is big."],
+"chair":["This is a chair.","I sit on a chair.","The chair is small."],"eraser":["This is an eraser.","I have an eraser.","The eraser is pink."],
+"pencil case":["This is a pencil case.","My pencils are in the pencil case.","I have a pencil case."],"notebook":["This is a notebook.","I write in my notebook.","My notebook is green."],
+"crayon":["This is a crayon.","I color with a crayon.","I have many crayons."],"picture":["This is a picture.","Look at the picture.","The picture is nice."],
+"sharpener":["This is a sharpener.","I sharpen my pencil with a sharpener.","I have a sharpener."],
+"scissors":["These are scissors.","I cut with scissors.","My scissors are small."],"glue":["This is glue.","I use glue.","The glue is white."],
+"clock":["This is a clock.","Look at the clock.","The clock is round."],"door":["This is a door.","Open the door, please.","Close the door, please."],
+"window":["This is a window.","Open the window, please.","The window is big."],"computer":["This is a computer.","I use a computer.","The computer is new."],
+"teacher":["This is my teacher.","My teacher is kind.","I love my teacher."],"student":["I am a student.","She is a student.","He is a good student."],
+"globe":["This is a globe.","Look at the globe.","The globe is round."],"paper":["This is paper.","I draw on paper.","The paper is white."],
+"paint":["This is paint.","I paint a picture.","I like to paint."],"Thai":["I study Thai.","Do you like Thai?","My favorite subject is Thai."],"English":["I study English.","Do you like English?","My favorite subject is English."],"music":["I like music.","Do you like music?","My favorite subject is music."],"art":["I like art.","Do you like art?","My favorite subject is art."],"science":["I study science.","Do you like science?","My favorite subject is science."],"social studies":["I study social studies.","Do you like social studies?","My favorite subject is social studies."],"P.E.":["I like P.E.","Do you like P.E.?","My favorite subject is P.E."],"math":["I study math.","Do you like math?","My favorite subject is math."],
+"park":["This is a park.","I play in the park.","No littering in the park."],"school":["This is my school.","I go to school.","No smoking at school."],"museum":["This is a museum.","I go to the museum.","No eating in the museum."],"cinema":["This is a cinema.","I watch a movie at the cinema.","The cinema is big."],"road":["This is a road.","No parking on the road.","The road is long."],"test room":["This is a test room.","No talking in the test room.","Be quiet in the test room."],
+"light":["This is a light.","Turn on the light, please.","Turn off the light, please."],"television":["This is a television.","Turn on the television, please.","I watch television."],"radio":["This is a radio.","Turn off the radio, please.","I listen to the radio."],"laptop":["This is a laptop.","Turn on the laptop, please.","My laptop is new."],"CD player":["This is a CD player.","Turn on the CD player, please.","The CD player is old."],"fan":["This is a fan.","Turn on the fan, please.","Turn off the fan, please."],
+"calculator":["This is a calculator.","I use a calculator.","My calculator is black."]};
+let curS=null,sScore=0,sNum=1,sLock=false;
+function newSent(reset){if(reset){sScore=0;sNum=1}sLock=false;document.getElementById('swin').classList.remove('show');
+ document.getElementById('sscore').textContent=sScore;document.getElementById('snum').textContent=sNum;
+ const i=Math.floor(Math.random()*words.length),list=sents[words[i].w].filter(x=>!(words[i].w=="pencil"&&/pencil case/.test(x)));
+ const book=words[i].w;let pool=list.filter(x=>{const o=words.filter(w=>w.w!=book&&new RegExp('\\b'+w.w+'s?\\b').test(x));return !o.length});if(!pool.length)pool=[list[0]];
+ curS={i,s:pool[Math.floor(Math.random()*pool.length)]};
+ document.getElementById('sbox').textContent='🔊 '+curS.s;
+ const ch=[i,...words.map((_,k)=>k).filter(k=>k!=i&&words[k].e!=words[i].e).sort(()=>Math.random()-.5).slice(0,3)].sort(()=>Math.random()-.5);
+ const o=document.getElementById('opts');o.innerHTML='';
+ ch.forEach(k=>{const d=document.createElement('div');d.className='tile opt'+(words[k].n?' isnum':'');d.textContent=words[k].e;if(k==curS.i)d.dataset.ok=1;d.onclick=()=>chooseS(d,k);o.appendChild(d)});
+ setTimeout(()=>sayWord(curS.s,.75),300)}
+function chooseS(d,k){if(sLock)return;
+ if(k==curS.i){sLock=true;d.classList.add('ok');sScore+=qPts();addStar(d||a);document.getElementById('sscore').textContent=sScore;sayWord('Correct! '+curS.s,.8);
+  setTimeout(()=>{if(sNum>=10){const w=document.getElementById('swin');w.textContent='🏆 เก่งมาก! ได้ '+sScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{sNum++;newSent(false)}},2600)}
+ else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}}
+// ===== Prepositions game =====
+const posSents=["The ruler is in the book.","The pencil is on the table.","The pencil case is under the table.","The bag is near the book.","The cat is next to the box.","The cat is in front of the book.","The cat is behind the book."];
+const thing={ruler:"📏",pencil:"✏️","pencil case":"👝",book:"📕",bag:"🎒",cat:"🐱",box:"📦"};
+const preps=["in","on","under","near","next to","in front of","behind"];
+let curP=null,pList=[],pIdx=0,pScore=0,pLock=false;
+function parseS(t){const m=t.match(/^The (.+?) is (in front of|next to|behind|under|near|on|in) the (.+?)\.$/);return {a:m[1],p:m[2],b:m[3]}}
+function sceneHTML(a,p,b){
+ const tb=b=="table";let A={x:50,y:55,f:44,z:2},B={x:50,y:62,f:66,z:1};
+ if(p=="on"){A={x:50,y:tb?30:24,f:40,z:2};B.y=tb?70:72}
+ else if(p=="under"){A={x:50,y:tb?84:88,f:36,z:2};B={x:50,y:tb?55:38,f:56,z:1}}
+ else if(p=="in"){A={x:56,y:44,f:40,z:0};B={x:50,y:64,f:68,z:1}}
+ else if(p=="behind"){A={x:62,y:44,f:46,z:0};B={x:46,y:64,f:68,z:1}}
+ else if(p=="in front of"){A={x:42,y:76,f:52,z:2};B={x:56,y:50,f:62,z:1}}
+ else if(p=="next to"){A={x:34,y:62,f:48,z:2};B={x:64,y:62,f:62,z:1}}
+ else if(p=="near"){A={x:20,y:66,f:42,z:2};B={x:72,y:62,f:62,z:1}}
+ const bh=tb?`<div class="o tbl" style="left:${B.x}%;top:${B.y}%;z-index:1"><i class="tp"></i><i class="l1"></i><i class="l2"></i></div>`:`<div class="o" style="left:${B.x}%;top:${B.y}%;font-size:${B.f}px;z-index:1">${thing[b]}</div>`;
+ return `<div class="ground"></div>${bh}<div class="o" style="left:${A.x}%;top:${A.y}%;font-size:${A.f}px;z-index:${A.z}">${thing[a]}</div>`}
+function startPos(){pList=[...posSents].sort(()=>Math.random()-.5);pIdx=0;pScore=0;document.getElementById('ptot').textContent=pList.length;document.getElementById('pwin').classList.remove('show');showPos()}
+function showPos(){pLock=false;const t=pList[pIdx],q=parseS(t);curP={s:t,...q};
+ document.getElementById('pscore').textContent=pScore;document.getElementById('pnum').textContent=pIdx+1;document.getElementById('pbox').textContent='🔊 '+t;
+ const avoid={"near":"next to","next to":"near"};
+ let others=preps.filter(x=>x!=q.p&&x!=avoid[q.p]);if(q.b=="table")others=others.filter(x=>x!="in"&&x!="behind"&&x!="in front of"||x=="in front of");
+ const ch=[q.p,...others.sort(()=>Math.random()-.5).slice(0,3)].sort(()=>Math.random()-.5);
+ const o=document.getElementById('popts');o.innerHTML='';
+ ch.forEach(pp=>{const d=document.createElement('div');d.className='scene';d.innerHTML=sceneHTML(q.a,pp,q.b);if(pp==q.p)d.dataset.ok=1;d.onclick=()=>choosePos(d,pp);o.appendChild(d)});
+ setTimeout(()=>sayWord(t,.75),300)}
+function choosePos(d,pp){if(pLock)return;
+ if(pp==curP.p){pLock=true;d.classList.add('ok');pScore+=qPts();addStar(d||a);document.getElementById('pscore').textContent=pScore;sayWord('Correct! '+curP.s,.8);
+  setTimeout(()=>{if(pIdx>=pList.length-1){const w=document.getElementById('pwin');w.textContent='🏆 เก่งมาก! ได้ '+pScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{pIdx++;showPos()}},2800)}
+ else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}}
+// ===== Preposition vocabulary =====
+const prepInfo=[{p:"in",t:"ใน",ex:"The cat is in the box."},{p:"on",t:"บน",ex:"The cat is on the box."},{p:"under",t:"ใต้",ex:"The cat is under the table."},
+{p:"next to",t:"ข้าง ๆ / ติดกับ",ex:"The cat is next to the box."},{p:"near",t:"ใกล้",ex:"The cat is near the box."},
+{p:"in front of",t:"ข้างหน้า",ex:"The cat is in front of the box."},{p:"behind",t:"ข้างหลัง",ex:"The cat is behind the box."}];
+function renderPreps(){const g=document.getElementById('pgrid');if(g.children.length)return;
+ prepInfo.forEach((x,i)=>{const d=document.createElement('div');d.className='pcard';d.id='pp'+i;d.style.background=colors[(i*2+1)%colors.length];
+  const b=x.p=="under"?"table":"box";
+  d.innerHTML=`<div class="scene">${sceneHTML("cat",x.p,b)}</div><div class="word">${x.p}</div><div class="th">${x.t}</div><div class="ex">${x.ex}</div>`;
+  d.onclick=()=>{stopAll();sayPrep(i)};g.appendChild(d)})}
+function sayPrep(i){return new Promise(res=>{const el=document.getElementById('pp'+i);el.classList.add('speaking');
+ const u=new SpeechSynthesisUtterance(prepInfo[i].p+". "+prepInfo[i].ex);u.lang='en-US';u.rate=.75;u.pitch=1.2;const v=getVoice();if(v)u.voice=v;
+ u.onend=u.onerror=()=>{el.classList.remove('speaking');res()};speechSynthesis.speak(u)})}
+async function playPreps(){stopAll();stopFlag=false;await new Promise(r=>setTimeout(r,100));
+ for(let i=0;i<prepInfo.length;i++){if(stopFlag)break;document.getElementById('pp'+i).scrollIntoView({behavior:'smooth',block:'center'});await sayPrep(i);await new Promise(r=>setTimeout(r,500))}}
+// ===== Global stars =====
+let stars=0;try{stars=+(localStorage.getItem('fc_stars')||0)}catch(e){}
+const levels=[[10,"🥉","เหรียญทองแดง"],[25,"🥈","เหรียญเงิน"],[50,"🥇","เหรียญทอง"],[100,"👑","ราชาคำศัพท์"]];
+function badgeFor(n){let b="";levels.forEach(l=>{if(n>=l[0])b=l[1]});return b}
+function showStars(){document.getElementById('stars').textContent=stars;document.getElementById('badge').textContent=badgeFor(stars)}
+function addStar(el){stars++;try{localStorage.setItem('fc_stars',stars)}catch(e){}showStars();
+ const sb=document.getElementById('starbar');sb.classList.remove('pop');void sb.offsetWidth;sb.classList.add('pop');
+ if(el&&el.getBoundingClientRect){const r=el.getBoundingClientRect(),f=document.createElement('div');f.className='fly';f.textContent='⭐';f.style.left=(r.left+r.width/2-24)+'px';f.style.top=(r.top)+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),1000)}
+ const lv=levels.find(l=>l[0]==stars);if(lv)setTimeout(()=>party(lv[1],'ได้ '+stars+' ดาว! รับ'+lv[2]),900)}
+function party(icon,txt){document.getElementById('pbig').textContent=icon;document.getElementById('ptxt').textContent=txt;document.getElementById('party').classList.add('show');
+ for(let i=0;i<40;i++){const c=document.createElement('div');c.className='conf';c.textContent=["🎉","⭐","🎊","✨","🌈"][i%5];c.style.left=Math.random()*100+'vw';c.style.animationDelay=Math.random()*.8+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),3500)}
+ setTimeout(()=>sayWord('Excellent! You are a star!',.9),300)}
+function resetStars(){if(confirm('รีเซ็ตดาวสะสมเป็น 0 ใช่ไหม?')){stars=0;try{localStorage.setItem('fc_stars',0)}catch(e){}showStars()}}
+showStars();
+// ===== Sentence ordering =====
+const orderSents=[...posSents,"The cat is in the box.","The cat is on the box.","The cat is under the table."];
+let curO=null,oList=[],oIdx=0,oScore=0,oLock=false;
+function startOrder(){oList=[...orderSents].sort(()=>Math.random()-.5);oIdx=0;oScore=0;document.getElementById('otot').textContent=oList.length;document.getElementById('owin').classList.remove('show');showOrder()}
+function showOrder(){oLock=false;const t=oList[oIdx],q=parseS(t);curO={s:t,words:t.replace('.','').split(' ')};
+ document.getElementById('oscore').textContent=oScore;document.getElementById('onum').textContent=oIdx+1;
+ document.getElementById('oscene').innerHTML=sceneHTML(q.a,q.p,q.b);
+ const sl=document.getElementById('oslot');sl.className='slot';sl.innerHTML='';
+ const bk=document.getElementById('obank');bk.innerHTML='';
+ let mix=curO.words.map((w,i)=>({w,i}));do{mix.sort(()=>Math.random()-.5)}while(mix.map(x=>x.w).join(' ')==curO.words.join(' '));
+ mix.forEach((x,k)=>{const c=document.createElement('div');c.className='chip';c.textContent=x.w;c.style.background=colors[k%colors.length];
+  c.onclick=()=>{if(oLock)return;sayWord(x.w,.8);(c.parentNode==bk?sl:bk).appendChild(c);if(!bk.children.length)setTimeout(checkOrder,400)};bk.appendChild(c)})}
+function checkOrder(){if(oLock)return;const sl=document.getElementById('oslot');const ans=[...sl.children].map(c=>c.textContent);
+ if(ans.length<curO.words.length){sayWord('Use all the words',.9);return}
+ if(ans.join(' ')==curO.words.join(' ')){oLock=true;sl.classList.add('ok');oScore+=qPts();addStar(sl);document.getElementById('oscore').textContent=oScore;sayWord('Correct! '+curO.s,.8);
+  setTimeout(()=>{if(oIdx>=oList.length-1){const w=document.getElementById('owin');w.textContent='🏆 เก่งมาก! ได้ '+oScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{oIdx++;showOrder()}},3000)}
+ else{sl.classList.remove('bad');void sl.offsetWidth;sl.classList.add('bad');sayWord('Try again',.9);oLock=true;setTimeout(()=>{const bk=document.getElementById('obank'),pool=[...sl.children,...bk.children];curO.words.forEach(w=>{const i=pool.findIndex(c=>c.textContent==w);sl.appendChild(pool.splice(i,1)[0])});oLock=false;checkOrder()},1500)}}
+// ===== Categories =====
+for(let k=21;k<=100;k++)words.push({w:numWord(k),e:String(k),t:thNum(k),n:1});
+const ALL=words.slice();
+const clSet=["table","chair","picture","clock","door","window","computer","globe","teacher","student"];
+ALL.forEach(x=>x.c=x.sb?"sb":x.pl?"pl":x.n?"num":x.d||x.w=="computer"?"dev":clSet.includes(x.w)?"cl":"st");
+numsList=ALL.filter(x=>x.n);numsList.forEach(x=>{const C=x.w[0].toUpperCase()+x.w.slice(1);sents[x.w]=["This is number "+x.w+".","I can count to "+x.w+".",C+"!"]});
+words=ALL.slice();order=words.map((_,i)=>i);
+function setCat(c){stopAll();words=c=="all"?ALL.slice():ALL.filter(x=>x.c==c);order=words.map((_,i)=>i);render();
+ document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('on',b.dataset.c==c));
+ left=0;curS=null;
+ if(document.getElementById('game').style.display=='block')newRound();
+ if(document.getElementById('sent').style.display=='block')newSent(true)}
+const _mode=mode;mode=function(m){_mode(m);document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== number styling =====
+const _render=render;render=function(){_render();words.forEach((x,i)=>{if(x.n){const c=document.getElementById('c'+i);c&&c.classList.add('isnum')}})};
+// ===== There is / There are =====
+const tItems=[["book","📕"],["pen","🖊️"],["pencil","✏️"],["ruler","📏"],["bag","🎒"],["chair","🪑"],["crayon","🖍️"],["notebook","📓"],["clock","🕰️"],["computer","💻"],["eraser","🧽"],["window","🪟"]];
+let tCur=null,tIdx=0,tScore=0,tLock=false;
+function tSent(v,n,it){return "There "+v+" "+nums[n-1]+" "+it+(n>1?"s":"")+"."}
+function startThere(){tIdx=0;tScore=0;document.getElementById('twin').classList.remove('show');showThere()}
+function showThere(){tLock=false;const [it,em]=tItems[Math.floor(Math.random()*tItems.length)];const n=Math.random()<.35?1:2+Math.floor(Math.random()*5);
+ const right=tSent(n==1?"is":"are",n,it);tCur={s:right};
+ const opts=new Set([right,tSent(n==1?"are":"is",n,it)]);
+ while(opts.size<3){const m=1+Math.floor(Math.random()*6);if(m!=n)opts.add(tSent(m==1?"is":"are",m,it))}
+ document.getElementById('tscore').textContent=tScore;document.getElementById('tnum').textContent=tIdx+1;
+ document.getElementById('tpic').textContent=em.repeat(n);
+ const o=document.getElementById('topts');o.innerHTML='';
+ [...opts].sort(()=>Math.random()-.5).forEach(t=>{const d=document.createElement('div');d.className='tile wd sopt';d.textContent=t;if(t==right)d.dataset.ok=1;d.onclick=()=>chooseThere(d,t);o.appendChild(d)})}
+function chooseThere(d,t){if(tLock)return;
+ if(t==tCur.s){tLock=true;d.classList.add('ok');tScore+=qPts();addStar(d);document.getElementById('tscore').textContent=tScore;sayWord('Correct! '+t,.8);
+  setTimeout(()=>{if(tIdx>=9){const w=document.getElementById('twin');w.textContent='🏆 เก่งมาก! ได้ '+tScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{tIdx++;showThere()}},2800)}
+ else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}}
+// ===== Numbers helpers =====
+function numWord(n){const o="zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(" ");const t=["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];if(n<20)return o[n];if(n==100)return "one hundred";return t[Math.floor(n/10)]+(n%10?"-"+o[n%10]:"")}
+function thNum(n){const d=["","หนึ่ง","สอง","สาม","สี่","ห้า","หก","เจ็ด","แปด","เก้า"];if(n==100)return "หนึ่งร้อย";if(n<10)return d[n];const t=Math.floor(n/10),u=n%10;return (t==1?"":t==2?"ยี่":d[t])+"สิบ"+(u==1?"เอ็ด":d[u])}
+// ===== Exercises =====
+const exItems=[{w:"pencil case",e:"👝"},{w:"ruler",e:"📏"},{w:"pencil",e:"✏️"},{w:"eraser",e:"🧽"},{w:"book",e:"📕"},{w:"crayon",e:"🖍️"},{w:"pen",e:"🖊️"},{w:"notebook",e:"📓"}];
+let exCur=null,exIdx=0,exScore=0,exLock=false,exSeq=[];
+function rnd(a,b){return a+Math.floor(Math.random()*(b-a+1))}
+function nearNums(n,k){const st=new Set([n]);const c=[n+1,n-1,n+10,n-10,+String(n).split('').reverse().join('')].filter(x=>x>=1&&x<=100&&x!=n).sort(()=>Math.random()-.5);
+ for(const x of c){if(st.size>k)break;st.add(x)}while(st.size<=k)st.add(rnd(1,100));return [...st].sort(()=>Math.random()-.5)}
+const _mode2=mode;mode=function(m){_mode2(m);document.getElementById('ex').style.display=m==8?'block':'none';document.getElementById('t8').classList.toggle('on',m==8);if(m==8&&!exCur)startEx()};
+function startEx(){exSeq=['A','A','A','A','B','B','B','C','C','C'].sort(()=>Math.random()-.5);exIdx=0;exScore=0;document.getElementById('exwin').classList.remove('show');showEx()}
+function exScene(g){let h='<div class="wall"></div><div class="floor"></div>';const tb=[[4,46],[54,96]],sp=Math.ceil(g.length/2);
+ tb.forEach((t,i)=>{const w=t[1]-t[0];h+=`<div class="xt" style="left:${t[0]}%;width:${w}%"><i class="xtop"></i><i class="xl a"></i><i class="xl b"></i></div>`;
+  h+=`<div class="xitems" style="left:${t[0]}%;width:${w}%">`+(i?g.slice(sp):g.slice(0,sp)).map(x=>`<span class="grp">${x.e.repeat(x.n)}</span>`).join('')+'</div>'});return h}
+function showEx(){exLock=false;const ty=exSeq[exIdx],box=document.getElementById('exbox'),hint=document.getElementById('exhint');
+ document.getElementById('exscore').textContent=exScore;document.getElementById('exnum').textContent=exIdx+1;
+ if(ty=='A'){const g=[...exItems].sort(()=>Math.random()-.5).slice(0,rnd(3,4)).map(x=>({...x,n:rnd(2,6)}));
+  const plain=g.map(x=>nums[x.n-1]+' '+x.w+'s'),spoken='There are '+plain.slice(0,-1).join(', ')+' and '+plain.at(-1)+' in the classroom.';
+  const parts=g.map(x=>`<select class="exsel" data-a="${nums[x.n-1]}"><option value="">?</option>${nums.slice(0,10).map(w=>`<option>${w}</option>`).join('')}</select> ${x.w}<span class="pl">s</span>`);
+  exCur={ty,s:spoken};hint.textContent='นับของบนโต๊ะ แล้วเลือกตัวเลขให้ถูกต้อง';
+  box.innerHTML=`<div class="exscene">${exScene(g)}</div><div class="exsent" id="exsent">There are ${parts.slice(0,-1).join(', ')} and ${parts.at(-1)} in the classroom.</div>
+  <div class="controls"><button class="b1" onclick="checkEx()">✅ ตรวจคำตอบ</button></div>`}
+ else{const n=rnd(1,100);exCur={ty,n,s:numWord(n)};const o=document.createElement('div');o.className='opts';
+  if(ty=='B'){hint.textContent='ตัวเลขนี้อ่านว่าอะไร? เลือกคำที่ถูกต้อง';box.innerHTML=`<div class="bignum">${n}</div>`;
+   nearNums(n,2).forEach(k=>{const d=document.createElement('div');d.className='tile wd';d.style.padding='16px';d.textContent=numWord(k);if(k==n)d.dataset.ok=1;d.onclick=()=>pickEx(d,k);o.appendChild(d)})}
+  else{hint.textContent='ฟังเสียง แล้วเลือกตัวเลขที่ได้ยิน';box.innerHTML=`<div class="controls"><button class="b3" style="font-size:1.6rem" onclick="sayWord(exCur.s,.7)">🔊 ฟังเสียง</button></div>`;
+   nearNums(n,3).forEach(k=>{const d=document.createElement('div');d.className='tile opt isnum';d.textContent=k;if(k==n)d.dataset.ok=1;d.onclick=()=>pickEx(d,k);o.appendChild(d)});setTimeout(()=>sayWord(exCur.s,.7),300)}
+  box.appendChild(o)}}
+function exRight(el){exLock=true;el.classList.add('ok');exScore+=qPts();addStar(el);document.getElementById('exscore').textContent=exScore;sayWord('Correct! '+exCur.s,.8);
+ setTimeout(()=>{if(exIdx>=9){const w=document.getElementById('exwin');w.textContent='🏆 เก่งมาก! ได้ '+exScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{exIdx++;showEx()}},exCur.ty=='A'?6500:2800)}
+function exWrong(el){el.classList.remove('bad');void el.offsetWidth;el.classList.add('bad');setTimeout(()=>el.classList.remove('bad'),400);sayWord('Try again',.9)}
+function pickEx(d,k){if(exLock)return;if(k==exCur.n)exRight(d);else{exWrong(d);showRight(d)}}
+function checkEx(){if(exLock)return;const ss=[...document.querySelectorAll('#exsent .exsel')];
+ if(ss.some(x=>!x.value)){sayWord('Choose all the numbers',.9);return}
+ let ok=true;ss.forEach(x=>{const r=x.value==x.dataset.a;x.classList.toggle('ok',r);x.classList.toggle('no',!r);if(!r)ok=false});
+ const sent=document.getElementById('exsent');
+ if(ok){ss.forEach(x=>{const sp=document.createElement('span');sp.className='nw';sp.textContent=x.value;x.replaceWith(sp)});exRight(sent)}else{exWrong(sent);exLock=true;setTimeout(()=>{exLock=false;ss.forEach(x=>x.value=x.dataset.a);checkEx()},1500)}}
+// ===== How Many? (from lesson) =====
+const hmItems=[["book","📕"],["pencil case","👝"],["eraser","🧽"],["pencil","✏️"],["ruler","📏"],["pen","🖊️"],["crayon","🖍️"],["bag","🎒"],["notebook","📓"],["chair","🪑"]];
+let hmCur=null,hmIdx=0,hmScore=0,hmLock=false;
+function hmAns(n,it){return n==1?`There is ${/^[aeiou]/.test(it)?"an":"a"} ${it} in this picture.`:`There are ${nums[n-1]} ${it}s in this picture.`}
+function startHM(){hmIdx=0;hmScore=0;document.getElementById('hmwin').classList.remove('show');showHM()}
+function showHM(){hmLock=false;const [it,em]=hmItems[rnd(0,hmItems.length-1)],n=Math.random()<.2?1:rnd(2,10);
+ hmCur={q:`How many ${it}s are there in this picture?`,a:hmAns(n,it)};
+ document.getElementById('hmscore').textContent=hmScore;document.getElementById('hmnum').textContent=hmIdx+1;
+ document.getElementById('hmq').textContent='🔊 A: '+hmCur.q;document.getElementById('hmpic').textContent=em.repeat(n);
+ const op=new Set([hmCur.a]);while(op.size<3){const m=rnd(1,10);if(m!=n)op.add(hmAns(m,it))}
+ const o=document.getElementById('hmopts');o.innerHTML='';
+ [...op].sort(()=>Math.random()-.5).forEach(t=>{const d=document.createElement('div');d.className='tile wd sopt';d.textContent=t;
+  if(t==hmCur.a)d.dataset.ok=1;d.onclick=()=>{if(hmLock)return;if(t==hmCur.a){hmLock=true;d.classList.add('ok');hmScore+=qPts();addStar(d);document.getElementById('hmscore').textContent=hmScore;sayWord('Correct! '+t,.8);
+   setTimeout(()=>{if(hmIdx>=9){const w=document.getElementById('hmwin');w.textContent='🏆 เก่งมาก! ได้ '+hmScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{hmIdx++;showHM()}},3200)}
+   else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}};o.appendChild(d)});
+ setTimeout(()=>sayWord(hmCur.q,.75),300)}
+// ===== Missing letters (from lesson p.4-9) =====
+const mlList=[["pen","p_n","🖊️"],["ruler","ru_er","📏"],["bag","ba_","🎒"],["sharpener","_har_ener","⚙️"],["pencil","pe__il","✏️"],["pencil case","pencil _ase","👝"],
+["eraser","_raser","🧽"],["crayon","cra_on","🖍️"],["book","boo_","📕"],["notebook","_oteb__k","📓"],["table","_able","🍽️"],["chair","__air","🪑"],["picture","_icture","🖼️"]];
+let mlCur=null,mlSeq=[],mlIdx=0,mlScore=0,mlFill=[],mlMiss=[];
+function startML(){mlSeq=[...mlList].sort(()=>Math.random()-.5);mlIdx=0;mlScore=0;document.getElementById('mlwin').classList.remove('show');showML()}
+function drawML(){let k=0;document.getElementById('mlword').textContent=mlCur.pat.split('').map(c=>c=='_'?(k<mlFill.length?mlFill[k++]:(k++,'_')):c).join('')}
+function showML(){const [w,pat,em]=mlSeq[mlIdx];mlCur={w,pat};mlFill=[];mlMiss=[];[...pat].forEach((c,i)=>{if(c=='_')mlMiss.push(w[i])});
+ document.getElementById('mlscore').textContent=mlScore;document.getElementById('mlnum').textContent=mlIdx+1;document.getElementById('mlpic').textContent=em;drawML();
+ const al="abcdefghijklmnopqrstuvwxyz",set=new Set(mlMiss);while(set.size<Math.max(4,mlMiss.length+3))set.add(al[rnd(0,25)]);
+ const b=document.getElementById('mlbank');b.innerHTML='';
+ [...set].sort(()=>Math.random()-.5).forEach((L,k)=>{const c=document.createElement('div');c.className='chip';c.style.background=colors[k%colors.length];c.textContent=L;
+  c.onclick=()=>{const need=mlMiss[mlFill.length];if(need===undefined)return;
+   if(L==need){mlFill.push(L);drawML();if(mlFill.length==mlMiss.length){const el=document.getElementById('mlword');mlScore+=qPts();addStar(el);document.getElementById('mlscore').textContent=mlScore;sayWord('Correct! '+w,.8);
+    setTimeout(()=>{if(mlIdx>=mlSeq.length-1){const x=document.getElementById('mlwin');x.textContent='🏆 เก่งมาก! ได้ '+mlScore+' คะแนน 🏆';x.classList.add('show');sayWord('Great job!',.9)}else{mlIdx++;showML()}},2200)}}
+   else{c.classList.remove('bad');void c.offsetWidth;c.classList.add('bad');sayWord('Try again',.9);b.style.pointerEvents='none';setTimeout(()=>{const bs=[...b.children];(function step(){const nd=mlMiss[mlFill.length];if(nd===undefined){b.style.pointerEvents='';return}bs.find(x=>x.textContent==nd).onclick();setTimeout(step,350)})()},900)}};b.appendChild(c)})}
+const _mode3=mode;mode=function(m){_mode3(m);['hm','ml'].forEach((id,k)=>{document.getElementById(id).style.display=m==9+k?'block':'none';document.getElementById('t'+(9+k)).classList.toggle('on',m==9+k)});
+ if(m==9&&!hmCur)startHM();if(m==10&&!mlCur)startML()};
+// ===== Tab groups =====
+const groups={1:[1,11,13,15,18,5],2:[2,3,4,6],3:[7,12,14,16,17,19,20,9,10,8]};
+function groupOf(m){return +Object.keys(groups).find(g=>groups[g].includes(m))}
+const tabsEl=document.querySelector('.tabs');
+for(const g of [1,2,3])groups[g].forEach(m=>tabsEl.appendChild(document.getElementById('t'+m)));
+function showGroupTabs(g){for(let m=1;m<=20;m++){const t=document.getElementById('t'+m);if(t)t.style.display=groups[g].includes(m)?'':'none'}
+ [1,2,3].forEach(k=>document.getElementById('g'+k).classList.toggle('on',k==g))}
+function setGroup(g){showGroupTabs(g);mode(groups[g][0])}
+const _mode4=mode;mode=function(m){_mode4(m);showGroupTabs(groupOf(m))};
+showGroupTabs(1);
+// ===== Team mode =====
+let teamOn=false,turn='A',tp={A:0,B:0};
+function teamUI(){return;document.getElementById('teambar').classList.toggle('show',teamOn);document.getElementById('teamToggle').textContent='👥 โหมดแข่งเป็นทีม: '+(teamOn?'เปิด':'ปิด');
+ document.getElementById('ptA').textContent=tp.A;document.getElementById('ptB').textContent=tp.B;
+ document.getElementById('tmA').classList.toggle('turn',turn=='A');document.getElementById('tmB').classList.toggle('turn',turn=='B')}
+function tName(t){return document.getElementById('tn'+t).textContent}
+function toggleTeam(){teamOn=!teamOn;teamUI();if(teamOn)setTimeout(()=>sayWord('Team game! Red team, your turn.',.9),200)}
+function switchTurn(say){turn=turn=='A'?'B':'A';teamUI();if(say)sayWord((turn=='A'?'Red':'Blue')+' team, your turn.',.9)}
+function resetTeams(){tp={A:0,B:0};turn='A';teamUI()}
+const _addStar=addStar;addStar=function(el){_addStar(el);if(!teamOn)return;tp[turn]++;teamUI();
+ const pt=document.getElementById('pt'+turn);pt.parentNode.classList.remove('pop');
+ const done=turn;setTimeout(()=>{switchTurn(true)},3000);
+ const lead=tp.A==tp.B?null:(tp.A>tp.B?'A':'B');
+ if(tp[done]%10==0)setTimeout(()=>party(done=='A'?'🔴':'🔵',tName(done)+' ได้ '+tp[done]+' คะแนน!'),1000)};
+teamUI();
+// ===== Player name =====
+let player="";try{player=localStorage.getItem('fc_name')||""}catch(e){}
+function showHello(){const h=document.getElementById('hello');h.innerHTML=player?`🙋 สวัสดี <b>${player.replace(/</g,'&lt;')}</b> <button class="b4 tbtn" style="font-size:.85rem;padding:3px 10px" onclick="askName()">เปลี่ยนชื่อ</button>`:'';h.style.display=player?'':'none'}
+function askName(){document.getElementById('nameIn').value=player;document.getElementById('namebox').classList.remove('hide');setTimeout(()=>document.getElementById('nameIn').focus(),50)}
+function saveName(){const v=document.getElementById('nameIn').value.trim();if(!v){document.getElementById('nameIn').focus();return}
+ if(v!==player){stars=0;try{localStorage.setItem('fc_stars',0)}catch(e){}showStars()}
+ player=v;try{localStorage.setItem('fc_name',v)}catch(e){}document.getElementById('namebox').classList.add('hide');showHello();
+ sayWord('Hello, '+v+'! Let\'s learn English!',.85)}
+const _say=sayWord;sayWord=function(t,r){if(player&&/^(Great job!|Excellent! You are a star!)$/.test(t))t=t.replace('!',', '+player+'!');_say(t,r)};
+if(player){document.getElementById('namebox').classList.add('hide')}else setTimeout(()=>document.getElementById('nameIn').focus(),100);
+showHello();
+// ===== Learning report =====
+const gameNames={19:"💖 Favorite Subject",16:"⏰ What time is it?",17:"🌞 My Wonderful Day",14:"🚸 Match the Signs",12:"🔌 Turn on / off",2:"🧩 เกมจับคู่",3:"📝 ประโยคกับภาพ",4:"🐱 เกมบอกตำแหน่ง",6:"🧱 เรียงประโยค",7:"🔎 There is / are",9:"❓ How Many?",10:"🔡 เติมตัวอักษร",8:"🧮 นับของ"};
+let curMode=1,stats={};try{stats=JSON.parse(localStorage.getItem('fc_stats')||'{}')}catch(e){stats={}}
+function st(m){return stats[m]||(stats[m]={c:0,w:0,r:0,best:0,cur:0})}
+function saveStats(){try{localStorage.setItem('fc_stats',JSON.stringify(stats))}catch(e){}}
+const _mode5=mode;mode=function(m){curMode=m;_mode5(m)};
+const _addStar2=addStar;addStar=function(el){if(gameNames[curMode]){const x=st(curMode);x.c++;x.cur++;saveStats()}_addStar2(el)};
+const _say2=sayWord;sayWord=function(t,r){if(gameNames[curMode]){
+ if(t=='Try again'){st(curMode).w++;saveStats()}
+ if(/^Great job/.test(t)){const x=st(curMode);x.r++;x.best=Math.max(x.best,x.cur);x.cur=0;saveStats()}}_say2(t,r)};
+const _saveName=saveName;saveName=function(){const v=document.getElementById('nameIn').value.trim();if(v&&v!==player){stats={};saveStats()}_saveName()};
+function showReport(){stopAll();let tc=0,tw=0,rows='',weak=[],good=[];
+ Object.keys(gameNames).forEach(m=>{const x=stats[m]||{c:0,w:0,r:0,best:0};tc+=x.c;tw+=x.w;const tot=x.c+x.w,pc=tot?Math.round(x.c*100/tot):0;
+  const col=pc>=80?'#06d6a0':pc>=50?'#ffb703':'#ef476f';
+  if(tot){(pc>=80?good:pc<50?weak:[]).push(gameNames[m])}
+  rows+=`<div class="gr"><div class="nm">${gameNames[m]}</div><div class="bar"><i style="width:${tot?pc:0}%;background:${col}"></i></div><div class="st">${tot?`ถูก ${x.c}/${tot} (${pc}%)<br>จบ ${x.r} รอบ`:'ยังไม่ได้เล่น'}</div></div>`});
+ const all=tc+tw,pc=all?Math.round(tc*100/all):0;
+ let tip=all?'':'ยังไม่มีผลการเล่น ลองเล่นเกมหรือแบบฝึกหัดก่อนนะ 🎮';
+ if(all){tip=(good.length?`🌟 เก่งมาก: ${good.join(', ')}<br>`:'')+(weak.length?`💪 ควรฝึกเพิ่ม: ${weak.join(', ')}`:'👍 ทำได้ดีทุกเรื่องที่เล่นแล้ว เล่นเกมอื่นต่อได้เลย!')}
+ document.getElementById('repcard').innerHTML=`<h2>📊 สรุปผลการเรียน</h2>
+ <p style="text-align:center;font-family:Mali;font-size:1.3rem;color:#5a3e8a">${player?'ของ <b>'+player.replace(/</g,'&lt;')+'</b>':''} ${badgeFor(stars)}</p>
+ <div class="sumrow"><div class="sum" style="background:#ffb703"><b>⭐ ${stars}</b><span>ดาวสะสม</span></div>
+ <div class="sum" style="background:#06d6a0"><b>${tc}</b><span>ตอบถูก (ข้อ)</span></div>
+ <div class="sum" style="background:#3a86ff"><b>${pc}%</b><span>ความแม่นยำ</span></div></div>
+ ${rows}<div class="tipbox">${tip}</div>
+ <p style="font-family:Mali;font-size:.9rem;color:#888;margin-top:10px">ข้อที่ตอบผิดก่อนตอบถูก ได้ 0 คะแนนและไม่ได้ดาว · ความแม่นยำ = ตอบถูก ÷ (ตอบถูก + ตอบผิด) · 🟢 80% ขึ้นไป 🟡 50–79% 🔴 ต่ำกว่า 50%</p>
+ <div class="controls" style="margin-bottom:0"><button class="b4" onclick="if(confirm('ล้างผลการเรียนทั้งหมด?')){stats={};saveStats();showReport()}">🗑️ ล้างผล</button><button class="b3" onclick="document.getElementById('rep').classList.remove('show')">✖️ ปิด</button></div>`;
+ document.getElementById('rep').classList.add('show');
+ if(all)sayWord('You got '+tc+' correct answers. Well done!',.85)}
+// ===== Class table (per-player records) =====
+let cls={};try{cls=JSON.parse(localStorage.getItem('fc_class')||'{}')}catch(e){cls={}}
+function nowStr(){return new Date().toLocaleString('th-TH',{dateStyle:'short',timeStyle:'short'})}
+function saveCls(){try{localStorage.setItem('fc_class',JSON.stringify(cls))}catch(e){}}
+function syncMe(){if(!player)return;const r=cls[player]||(cls[player]={visits:0,first:nowStr()});r.stars=stars;r.stats=JSON.parse(JSON.stringify(stats));r.last=nowStr();saveCls()}
+function visit(name){const r=cls[name]||(cls[name]={visits:0,first:nowStr(),stars:0,stats:{}});r.visits++;r.last=nowStr();saveCls()}
+const _saveStats=saveStats;saveStats=function(){_saveStats();syncMe()};
+const _addStar3=addStar;addStar=function(el){_addStar3(el);syncMe()};
+saveName=function(){const v=document.getElementById('nameIn').value.trim();if(!v){document.getElementById('nameIn').focus();return}
+ if(v!==player){syncMe();player=v;const r=cls[v];stars=r?r.stars||0:0;stats=r&&r.stats?JSON.parse(JSON.stringify(r.stats)):{};
+  try{localStorage.setItem('fc_stars',stars);localStorage.setItem('fc_name',v);localStorage.setItem('fc_stats',JSON.stringify(stats))}catch(e){}
+  visit(v);syncMe();showStars()}
+ document.getElementById('namebox').classList.add('hide');showHello();sayWord((cls[v]&&cls[v].visits>1?'Welcome back, ':'Hello, ')+v+"! Let's learn English!",.85)};
+if(player){visit(player);syncMe()}
+function sumOf(r){let c=0,w=0,rd=0;Object.values(r.stats||{}).forEach(x=>{c+=x.c||0;w+=x.w||0;rd+=x.r||0});return {c,w,rd,pc:c+w?Math.round(c*100/(c+w)):null}}
+let clsSort='stars';
+function showClass(){stopAll();syncMe();const names=Object.keys(cls);
+ const rows=names.map(n=>({n,r:cls[n],...sumOf(cls[n])}));
+ rows.sort((a,b)=>clsSort=='name'?a.n.localeCompare(b.n,'th'):clsSort=='pc'?(b.pc??-1)-(a.pc??-1):clsSort=='visits'?b.r.visits-a.r.visits:(b.r.stars||0)-(a.r.stars||0));
+ const esc=t=>String(t).replace(/</g,'&lt;');
+ const body=rows.map((x,i)=>{const col=x.pc==null?'#bbb':x.pc>=80?'#06d6a0':x.pc>=50?'#ffb703':'#ef476f';
+  return `<tr class="${x.n==player?'me':''}"><td>${i<3&&clsSort=='stars'&&(x.r.stars||0)>0?['🥇','🥈','🥉'][i]:i+1}</td><td style="text-align:left">${esc(x.n)}</td><td>⭐ ${x.r.stars||0} ${badgeFor(x.r.stars||0)}</td><td>${x.c}</td><td><span class="pcx" style="background:${col}">${x.pc==null?'-':x.pc+'%'}</span></td><td>${x.rd}</td><td>${x.r.visits||0}</td><td>${esc(x.r.last||'-')}</td>
+  <td><button class="b1 tbtn" style="font-size:.8rem;padding:3px 9px" onclick="delPlayer('${encodeURIComponent(x.n)}')">ลบ</button></td></tr>`}).join('');
+ const sb=(k,t)=>`<button class="${clsSort==k?'b1':'b2'} tbtn" onclick="clsSort='${k}';showClass()">${t}</button>`;
+ document.getElementById('repcard').innerHTML=`<h2>🏫 ตารางคะแนนทั้งห้อง</h2>
+ <p style="text-align:center;font-family:Mali;color:#5a3e8a">ผู้เข้าใช้ทั้งหมด <b>${names.length}</b> คน · เข้าใช้รวม <b>${rows.reduce((a,x)=>a+(x.r.visits||0),0)}</b> ครั้ง</p>
+ <div class="controls" style="margin:8px 0">เรียงตาม: ${sb('stars','⭐ ดาว')}${sb('pc','🎯 ความแม่นยำ')}${sb('visits','🚪 เข้าใช้')}${sb('name','🔤 ชื่อ')}</div>
+ ${names.length?`<div class="tabwrap"><table class="ctab"><tr><th>#</th><th>ชื่อ</th><th>ดาว</th><th>ตอบถูก</th><th>แม่นยำ</th><th>จบรอบ</th><th>เข้าใช้</th><th>ล่าสุด</th><th></th></tr>${body}</table></div>`:'<div class="tipbox">ยังไม่มีผู้เข้าใช้</div>'}
+ <p style="font-family:Mali;font-size:.9rem;color:#888;margin-top:10px">แถวสีเหลือง = ผู้เล่นปัจจุบัน · เก็บไว้ในเบราว์เซอร์ของเครื่องนี้เท่านั้น</p>
+ <div class="controls" style="margin-bottom:0"><button class="b2" onclick="exportCSV()">📥 ดาวน์โหลด Excel (CSV)</button><button class="b4" onclick="if(confirm('ลบข้อมูลทุกคนในตาราง?')){cls={};saveCls();if(player)visit(player),syncMe();showClass()}">🗑️ ล้างตาราง</button><button class="b3" onclick="document.getElementById('rep').classList.remove('show')">✖️ ปิด</button></div>`;
+ document.getElementById('rep').classList.add('show')}
+function delPlayer(n){n=decodeURIComponent(n);if(n==player){alert('ลบผู้เล่นปัจจุบันไม่ได้ กรุณาเปลี่ยนชื่อก่อน');return}if(confirm('ลบ '+n+' ออกจากตาราง?')){delete cls[n];saveCls();showClass()}}
+function exportCSV(){syncMe();const g=Object.keys(gameNames);
+ const head=['ชื่อ','ดาว','ตอบถูก','ตอบผิด','ความแม่นยำ(%)','จบรอบ','จำนวนครั้งที่เข้าใช้','เข้าใช้ครั้งแรก','ล่าสุด',...g.map(m=>gameNames[m].replace(/^\S+\s/,'')+' ถูก/ทั้งหมด')];
+ const lines=[head,...Object.keys(cls).map(n=>{const r=cls[n],x=sumOf(r);return [n,r.stars||0,x.c,x.w,x.pc??'',x.rd,r.visits||0,r.first||'',r.last||'',...g.map(m=>{const t=(r.stats||{})[m];return t?`${t.c}/${t.c+t.w}`:''})]})];
+ const csv='\ufeff'+lines.map(l=>l.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='class_scores.csv';document.body.appendChild(a);a.click();a.remove()}
+// ===== Wrong answer = 0 points for that question =====
+let qWrong=false;
+function qPts(){return qWrong?0:10}
+const _say3=sayWord;sayWord=function(t,r){if(t=='Try again')qWrong=true;_say3(t,r)};
+function floatTxt(el,txt,col){if(!el||!el.getBoundingClientRect)return;const r=el.getBoundingClientRect(),f=document.createElement('div');f.className='fly';f.style.color=col;f.style.fontWeight='800';f.style.fontSize='2.4rem';f.textContent=txt;f.style.left=(r.left+r.width/2-30)+'px';f.style.top=r.top+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),1000)}
+const _addStar4=addStar;addStar=function(el){
+ if(qWrong){qWrong=false;floatTxt(el,'0','#ef476f');if(teamOn)setTimeout(()=>switchTurn(true),3000);return}
+ floatTxt(el,'+10','#06d6a0');_addStar4(el)};
+const _mode6=mode;mode=function(m){qWrong=false;_mode6(m)};
+// ===== Wrong = show answer and move on =====
+function showRight(d){const box=d.parentNode;box.style.pointerEvents='none';
+ setTimeout(()=>{const ok=box.querySelector('[data-ok]');box.style.pointerEvents='';if(ok&&ok.onclick)ok.onclick()},1000)}
+const _say4=sayWord;sayWord=function(t,r){if(qWrong&&/^Correct! /.test(t))t='The answer is: '+t.slice(9);_say4(t,r)};
+// ===== Classroom Language =====
+const devs=[["light","💡"],["fan","🌀"],["television","📺"],["computer","🖥️"],["laptop","💻"],["radio","📻"],["CD player","💿"]];
+function cmd(v,d){return `Turn ${v} the ${d}, please.`}
+function renderCL(){const g=document.getElementById('clgrid');if(g.children.length)return;
+ devs.forEach(([d,e],i)=>{const c=document.createElement('div');c.className='cmdcard';c.style.background=colors[(i*3+2)%colors.length];
+  c.innerHTML=`<span class="dv off" id="dv${i}">${e}</span><div class="word">${d}</div><div class="lamp" id="lp${i}" style="color:#ef476f">OFF</div>
+  <div class="btns"><button class="b2" onclick="devSet(${i},true)">🟢 Turn on</button><button class="b1" onclick="devSet(${i},false)">🔴 Turn off</button></div><div class="ex" id="ex${i}"></div>`;g.appendChild(c)})}
+function devSet(i,on){const [d]=devs[i],v=document.getElementById('dv'+i),l=document.getElementById('lp'+i);
+ v.className='dv '+(on?'on':'off');l.textContent=on?'ON':'OFF';l.style.color=on?'#06d6a0':'#ef476f';
+ document.getElementById('ex'+i).textContent=cmd(on?'on':'off',d);sayWord(cmd(on?'on':'off',d),.75)}
+let tofCur=null,tofIdx=0,tofScore=0,tofLock=false;
+function startTof(){tofIdx=0;tofScore=0;document.getElementById('tofwin').classList.remove('show');showTof()}
+function showTof(){tofLock=false;qWrong=false;const k=rnd(0,devs.length-1),[d,e]=devs[k],on=Math.random()<.5;
+ const right=cmd(on?'on':'off',d);tofCur={s:right};
+ const st=x=>`<div><span class="dv ${x?'on':'off'}">${e}</span><div class="lab">${x?'ON 🟢':'OFF 🔴'}</div></div>`;
+ document.getElementById('tofflow').innerHTML=st(!on)+'<div class="arr">➡️</div>'+st(on);
+ document.getElementById('tofscore').textContent=tofScore;document.getElementById('tofnum').textContent=tofIdx+1;
+ let o2;do{o2=devs[rnd(0,devs.length-1)][0]}while(o2==d);
+ const opts=[right,cmd(on?'off':'on',d),cmd(on?'on':'off',o2)].sort(()=>Math.random()-.5);
+ const box=document.getElementById('tofopts');box.innerHTML='';
+ opts.forEach(t=>{const b=document.createElement('div');b.className='tile wd sopt';b.textContent=t;if(t==right)b.dataset.ok=1;
+  b.onclick=()=>{if(tofLock)return;
+   if(t==right){tofLock=true;b.classList.add('ok');tofScore+=qPts();addStar(b);document.getElementById('tofscore').textContent=tofScore;sayWord('Correct! '+t,.8);
+    setTimeout(()=>{if(tofIdx>=9){const w=document.getElementById('tofwin');w.textContent='🏆 เก่งมาก! ได้ '+tofScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{tofIdx++;showTof()}},3000)}
+   else{b.classList.add('bad');sayWord('Try again',.9);showRight(b)}};box.appendChild(b)})}
+const _mode7=mode;mode=function(m){_mode7(m);[['cl',11],['tof',12]].forEach(([id,k])=>{document.getElementById(id).style.display=m==k?'block':'none';document.getElementById('t'+k).classList.toggle('on',m==k)});
+ if(m==11)renderCL();if(m==12&&!tofCur)startTof();document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== School Signs =====
+const signs=[{w:"No Smoking",e:"🚬",t:"ห้ามสูบบุหรี่",pl:["school","park","museum","cinema","test room"],place:"school"},
+{w:"No Parking",e:"🚗",t:"ห้ามจอดรถ",pl:["road"],place:"road"},
+{w:"No Talking",e:"🗣️",t:"ห้ามพูดคุย",pl:["test room","cinema","museum"],place:"test room"},
+{w:"No Eating",e:"🍔",t:"ห้ามรับประทานอาหาร",pl:["museum","cinema","test room"],place:"museum"},
+{w:"No Littering",e:"🗑️",t:"ห้ามทิ้งขยะ",pl:["park","school","road","museum","cinema"],place:"park"}];
+const places={park:"🏞️",school:"🏫",museum:"🏛️",cinema:"🎬",road:"🛣️","test room":"📝"};
+const plTh={park:"สวนสาธารณะ",school:"โรงเรียน",museum:"พิพิธภัณฑ์",cinema:"โรงภาพยนตร์",road:"ถนน","test room":"ห้องสอบ"};
+const placeBest={park:"No Littering",school:"No Smoking",museum:"No Eating",cinema:"No Talking",road:"No Parking","test room":"No Talking"};
+function signHTML(e,sm){return `<div class="sign${sm?' sm':''}">${e}</div>`}
+function renderSG(){const g=document.getElementById('sggrid');if(g.children.length)return;
+ signs.forEach((x,i)=>{const c=document.createElement('div');c.className='signcard';c.id='sg'+i;c.style.background=colors[(i*2+4)%colors.length];
+  c.innerHTML=`${signHTML(x.e)}<div class="word">${x.w}</div><div class="th">${x.t}</div><div class="ex">${places[x.place]} No ${x.w.split(' ')[1].toLowerCase()} in the ${x.place=="school"?"school":x.place}.</div>`;
+  c.onclick=()=>{stopAll();c.classList.add('speaking');sayWord(x.w+'.',.75);setTimeout(()=>c.classList.remove('speaking'),1500)};g.appendChild(c)})}
+let msCur=null,msIdx=0,msScore=0,msLock=false,msSeq=[];
+function startMS(){msSeq=['A','A','A','A','A','B','B','B','B','B'].sort(()=>Math.random()-.5);msIdx=0;msScore=0;document.getElementById('mswin').classList.remove('show');showMS()}
+function showMS(){msLock=false;qWrong=false;const ty=msSeq[msIdx],q=document.getElementById('msq'),o=document.getElementById('msopts');o.innerHTML='';
+ document.getElementById('msscore').textContent=msScore;document.getElementById('msnum').textContent=msIdx+1;
+ let opts,right,say;
+ if(ty=='A'){const x=signs[rnd(0,signs.length-1)];right=x.w;say=x.w;
+  document.getElementById('mshint').textContent="🔊 What's the sign? ดูป้าย แล้วเลือกชื่อป้ายที่ถูกต้อง";q.innerHTML=signHTML(x.e);
+  opts=[x.w,...signs.filter(y=>y!=x).sort(()=>Math.random()-.5).slice(0,2).map(y=>y.w)];
+  setTimeout(()=>sayWord("What's the sign?",.8),300)}
+ else{const pls=Object.keys(placeBest),pl=pls[rnd(0,pls.length-1)];right=placeBest[pl];
+  const ok=signs.filter(y=>y.pl.includes(pl)).map(y=>y.w);
+  say='No '+right.split(' ')[1].toLowerCase()+' in the '+pl+'.';
+  document.getElementById('mshint').textContent='สถานที่นี้ควรมีป้ายห้ามอะไร? เลือกป้ายที่เหมาะสม';
+  q.innerHTML=`<div style="font-size:6rem">${places[pl]}</div><div class="bignum" style="font-size:2.6rem;padding:6px;margin:6px auto;max-width:360px;cursor:pointer" onclick="sayWord('${pl}',.75)">🔊 ${pl}</div><div style="font-family:Mali;color:#5a3e8a">${plTh[pl]}</div>`;
+  opts=[right,...signs.map(y=>y.w).filter(w=>!ok.includes(w)).sort(()=>Math.random()-.5).slice(0,2)];
+  if(opts.length<3)opts=[right,...signs.map(y=>y.w).filter(w=>w!=right&&!ok.includes(w))];
+  setTimeout(()=>sayWord(pl,.75),300)}
+ msCur={s:say};
+ opts.sort(()=>Math.random()-.5).forEach(t=>{const sg=signs.find(y=>y.w==t),d=document.createElement('div');d.className='tile sopt2';
+  d.innerHTML=ty=='B'?`${signHTML(sg.e,1)}<div style="font-size:1.3rem;margin-top:6px">${t}</div>`:`<div style="font-size:1.8rem">${t}</div><div style="font-family:Mali;font-size:1rem;color:#888">${sg.t}</div>`;
+  if(t==right)d.dataset.ok=1;
+  d.onclick=()=>{if(msLock)return;
+   if(t==right){msLock=true;d.classList.add('ok');msScore+=qPts();addStar(d);document.getElementById('msscore').textContent=msScore;sayWord('Correct! '+say,.8);
+    setTimeout(()=>{if(msIdx>=9){const w=document.getElementById('mswin');w.textContent='🏆 เก่งมาก! ได้ '+msScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{msIdx++;showMS()}},3000)}
+   else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}};o.appendChild(d)})}
+const _mode8=mode;mode=function(m){_mode8(m);[['sg',13],['ms',14]].forEach(([id,k])=>{document.getElementById(id).style.display=m==k?'block':'none';document.getElementById('t'+k).classList.toggle('on',m==k)});
+ if(m==13)renderSG();if(m==14&&!msCur)startMS();document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== Time =====
+function timeWords(h,m){const H=numWord(h);if(m==0)return H+" o'clock";if(m<10)return H+" oh "+numWord(m);return H+" "+numWord(m)}
+function clockSVG(h,m,sz,sec){const S=sz||220,c=S/2,r=c-8;let t=`<svg class="clk" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}"><circle cx="${c}" cy="${c}" r="${r}" fill="#fff" stroke="#ff8fab" stroke-width="8"/>`;
+ for(let i=1;i<=12;i++){const a=i*Math.PI/6;t+=`<text x="${c+Math.sin(a)*(r-22)}" y="${c-Math.cos(a)*(r-22)+7}" text-anchor="middle" font-size="${S/11}" font-weight="800" fill="#5a3e8a" font-family="Baloo 2">${i}</text>`}
+ for(let i=0;i<60;i++){const a=i*Math.PI/30,l=i%5?4:9;t+=`<line x1="${c+Math.sin(a)*(r-2)}" y1="${c-Math.cos(a)*(r-2)}" x2="${c+Math.sin(a)*(r-2-l)}" y2="${c-Math.cos(a)*(r-2-l)}" stroke="#bbb" stroke-width="${i%5?1:2}"/>`}
+ const hand=(ang,len,w,col)=>`<line x1="${c}" y1="${c}" x2="${c+Math.sin(ang)*len}" y2="${c-Math.cos(ang)*len}" stroke="${col}" stroke-width="${w}" stroke-linecap="round"/>`;
+ t+=hand(((h%12)+m/60)*Math.PI/6,r*.5,S/28,'#ef476f')+hand(m*Math.PI/30,r*.78,S/40,'#3a86ff');
+ if(sec!=null)t+=hand(sec*Math.PI/30,r*.85,2,'#ffb703');
+ return t+`<circle cx="${c}" cy="${c}" r="${S/36}" fill="#5a3e8a"/></svg>`}
+let tmMin=7*60,tmSec=0,tmTimer=null;
+function drawTM(){const h=Math.floor(tmMin/60)%12||12,m=tmMin%60;document.getElementById('tmclock').innerHTML=clockSVG(h,m,240,tmSec);document.getElementById('tmtxt').textContent="🔊 It's "+timeWords(h,m)+"."}
+function sayTime(){const h=Math.floor(tmMin/60)%12||12,m=tmMin%60;sayWord("What time is it? It's "+timeWords(h,m)+".",.75)}
+function tmAdd(d){tmMin=(tmMin+d+720)%720;drawTM();sayTime()}
+function tmRand(){tmMin=rnd(0,143)*5;drawTM();sayTime()}
+const periods=[["🌅","In the morning","ตอนเช้า","in the morning"],["☀️","In the afternoon","ตอนบ่าย","in the afternoon"],["🌇","In the evening","ตอนเย็น","in the evening"],["🌙","At night","ตอนกลางคืน","at night"]];
+function renderTM(){drawTM();const pd=document.getElementById('pods');if(!pd.children.length)periods.forEach((x,i)=>{const d=document.createElement('div');d.className='pod';d.style.background=["#ffb703","#fb5607","#8338ec","#3a0ca3"][i];d.innerHTML=`<b>${x[0]}</b><span>${x[1]}</span><i>${x[2]}</i>`;d.onclick=()=>sayWord(x[1],.75);pd.appendChild(d)});
+ if(!tmTimer)tmTimer=setInterval(()=>{if(document.getElementById('tm').style.display=='block'){tmSec=(tmSec+1)%60;drawTM()}},1000)}
+let wtCur=null,wtIdx=0,wtScore=0,wtLock=false;
+function startWT(){wtIdx=0;wtScore=0;document.getElementById('wtwin').classList.remove('show');showWT()}
+function showWT(){wtLock=false;qWrong=false;const h=rnd(1,12),m=Math.random()<.4?0:rnd(1,11)*5;const right="It's "+timeWords(h,m)+".";wtCur={s:right};
+ document.getElementById('wtscore').textContent=wtScore;document.getElementById('wtnum').textContent=wtIdx+1;document.getElementById('wtclock').innerHTML=clockSVG(h,m,220);
+ const op=new Set([right]);const alt=[[h%12+1,m],[m?Math.min(12,m/5)||12:h,m?h*5%60:0],[h,(m+15)%60],[h==1?12:h-1,m]];
+ alt.sort(()=>Math.random()-.5).forEach(([a,b])=>{if(op.size<3&&a>=1&&a<=12)op.add("It's "+timeWords(a,b)+".")});while(op.size<3)op.add("It's "+timeWords(rnd(1,12),rnd(0,11)*5)+".");
+ const o=document.getElementById('wtopts');o.innerHTML='';
+ [...op].sort(()=>Math.random()-.5).forEach(t=>{const d=document.createElement('div');d.className='tile wd sopt';d.textContent=t;if(t==right)d.dataset.ok=1;
+  d.onclick=()=>{if(wtLock)return;if(t==right){wtLock=true;d.classList.add('ok');wtScore+=qPts();addStar(d);document.getElementById('wtscore').textContent=wtScore;sayWord('Correct! '+t,.8);
+   setTimeout(()=>{if(wtIdx>=9){const w=document.getElementById('wtwin');w.textContent='🏆 เก่งมาก! ได้ '+wtScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{wtIdx++;showWT()}},3000)}
+   else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}};o.appendChild(d)});
+ setTimeout(()=>sayWord('What time is it?',.8),300)}
+const wdList=[["I get up","⏰🛏️",6,0],["I play volleyball","🏐",3,1],["I go to school","🏫",7,0],["I go shopping","🛍️",4,1],["I go to bed","😴",9,3],["I go swimming","🏊",5,2]];
+let wdSeq=[],wdIdx=0,wdScore=0,wdLock=false,wdCur=null;
+function startWD(){wdSeq=[...wdList].sort(()=>Math.random()-.5);wdIdx=0;wdScore=0;document.getElementById('wdwin').classList.remove('show');showWD()}
+function showWD(){wdLock=false;qWrong=false;const [act,em,h,pi]=wdSeq[wdIdx];wdCur={s:`${act} at ${numWord(h)} o'clock ${periods[pi][3]}.`};
+ document.getElementById('wdscore').textContent=wdScore;document.getElementById('wdnum').textContent=wdIdx+1;
+ document.getElementById('wdpic').textContent=em;document.getElementById('wdclock').innerHTML=clockSVG(h,0,170)+`<div style="font-size:2rem">${periods[pi][0]}</div>`;
+ document.getElementById('wdsent').innerHTML=`${act} at <select class="exsel" data-a="${numWord(h)}"><option value="">?</option>${nums.slice(0,12).map(w=>`<option>${w}</option>`).join('')}</select> o'clock <select class="exsel" data-a="${periods[pi][3]}"><option value="">?</option>${periods.map(x=>`<option>${x[3]}</option>`).join('')}</select>.`}
+function checkWD(){if(wdLock)return;const ss=[...document.querySelectorAll('#wdsent .exsel')],sent=document.getElementById('wdsent');
+ if(ss.some(x=>!x.value)){sayWord('Choose all the answers',.9);return}
+ let ok=true;ss.forEach(x=>{const r=x.value==x.dataset.a;x.classList.toggle('ok',r);x.classList.toggle('no',!r);if(!r)ok=false});
+ if(ok){wdLock=true;ss.forEach(x=>{const sp=document.createElement('span');sp.className='nw';sp.textContent=x.value;x.replaceWith(sp)});sent.classList.add('ok');wdScore+=qPts();addStar(sent);document.getElementById('wdscore').textContent=wdScore;sayWord('Correct! '+wdCur.s,.8);
+  setTimeout(()=>{sent.classList.remove('ok');if(wdIdx>=wdSeq.length-1){const w=document.getElementById('wdwin');w.textContent='🏆 เก่งมาก! ได้ '+wdScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{wdIdx++;showWD()}},4000)}
+ else{sent.classList.remove('bad');void sent.offsetWidth;sent.classList.add('bad');sayWord('Try again',.9);wdLock=true;setTimeout(()=>{wdLock=false;ss.forEach(x=>x.value=x.dataset.a);checkWD()},1500)}}
+const _mode9=mode;mode=function(m){_mode9(m);[['tm',15],['wt',16],['wd',17]].forEach(([id,k])=>{document.getElementById(id).style.display=m==k?'block':'none';document.getElementById('t'+k).classList.toggle('on',m==k)});
+ if(m==15)renderTM();if(m==16&&!wtCur)startWT();if(m==17&&!wdCur)startWD();document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== School Subjects =====
+const subs=[["Thai","🇹🇭","ภาษาไทย"],["English","🔤","ภาษาอังกฤษ"],["music","🎵","ดนตรี"],["art","🎨","ศิลปะ"],["science","🔬","วิทยาศาสตร์"],["social studies","🌏","สังคมศึกษา"],["P.E.","⚽","พลศึกษา"],["math","➗","คณิตศาสตร์"]];
+let sjSel=1;
+function renderSJ(){const g=document.getElementById('sjgrid');if(g.children.length)return;
+ subs.forEach(([w,e,t],i)=>{const d=document.createElement('div');d.className='tile';d.id='sj'+i;d.innerHTML=`<div style="font-size:3.4rem">${e}</div><div style="font-size:1.5rem">${w}</div><div style="font-family:Mali;font-size:1rem;color:#888">${t}</div>`;
+  d.onclick=()=>{sjSel=i;subs.forEach((_,k)=>document.getElementById('sj'+k).classList.toggle('sel',k==i));document.getElementById('sjname').textContent=w;document.getElementById('sjans').textContent='';sayWord(w,.75)};g.appendChild(d)});
+ document.getElementById('sj1').classList.add('sel')}
+function sjAsk(){const t='Do you like '+subs[sjSel][0]+'?';document.getElementById('sjans').textContent='A: '+t;sayWord(t,.75)}
+function sjSay(t){document.getElementById('sjans').textContent='B: '+t;sayWord(t,.75)}
+function sjFav(){const q='What is your favorite subject?',a='My favorite subject is '+subs[sjSel][0]+'.';document.getElementById('sjans').innerHTML='A: '+q+'<br>B: '+a;sayWord(q+' '+a,.75)}
+let fsSeq=[],fsIdx=0,fsScore=0,fsLock=false,fsCur=null;
+function startFS(){fsSeq=['A','A','A','A','A','B','B','B','B','B'].sort(()=>Math.random()-.5);fsIdx=0;fsScore=0;document.getElementById('fswin').classList.remove('show');showFS()}
+function fsDone(d,say){fsLock=true;d.classList.add('ok');fsScore+=qPts();addStar(d);document.getElementById('fsscore').textContent=fsScore;sayWord('Correct! '+say,.8);
+ setTimeout(()=>{if(fsIdx>=9){const w=document.getElementById('fswin');w.textContent='🏆 เก่งมาก! ได้ '+fsScore+' คะแนน 🏆';w.classList.add('show');sayWord('Great job!',.9)}else{fsIdx++;showFS()}},3000)}
+function showFS(){fsLock=false;qWrong=false;const ty=fsSeq[fsIdx],k=rnd(0,subs.length-1),[w,e]=subs[k],o=document.getElementById('fsopts'),q=document.getElementById('fsq');o.innerHTML='';
+ document.getElementById('fsscore').textContent=fsScore;document.getElementById('fsnum').textContent=fsIdx+1;
+ let opts,right,say;
+ if(ty=='A'){const sent='My favorite subject is '+w+'.';say=sent;right=k;
+  document.getElementById('fshint').textContent='Listen and tick ✔ ฟังประโยค แล้วเลือกภาพวิชาที่ได้ยิน';
+  q.innerHTML=`<div class="controls"><button class="b3" style="font-size:1.5rem" onclick="sayWord('${sent}',.75)">🔊 ฟังเสียง</button></div>`;
+  opts=[k,...subs.map((_,i)=>i).filter(i=>i!=k).sort(()=>Math.random()-.5).slice(0,3)].sort(()=>Math.random()-.5);
+  opts.forEach(i=>{const d=document.createElement('div');d.className='tile opt';d.innerHTML=`<div>${subs[i][1]}</div><div style="font-size:1.1rem">${subs[i][0]}</div>`;if(i==k)d.dataset.ok=1;
+   d.onclick=()=>{if(fsLock)return;if(i==k)fsDone(d,say);else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}};o.appendChild(d)});
+  setTimeout(()=>sayWord(sent,.75),300)}
+ else{const like=Math.random()<.5;say=like?'Yes, I do.':"No, I don't.";
+  document.getElementById('fshint').textContent='Read and tick ✔ ดูภาพ 😀/😞 แล้วเลือกคำตอบที่ถูกต้อง';
+  q.innerHTML=`<div style="font-size:5rem">${e} ${like?'😀❤️':'😞💔'}</div><div class="tbig" onclick="sayWord('Do you like ${w}?',.75)">🔊 A: Do you like ${w}?</div>`;
+  const all=['Yes, I do.',"No, I don't.",'Yes, I am.',"No, I am not."];opts=[say,like?"No, I don't.":'Yes, I do.',all[rnd(2,3)]].sort(()=>Math.random()-.5);
+  opts.forEach(t=>{const d=document.createElement('div');d.className='tile wd sopt';d.textContent='B: '+t;if(t==say)d.dataset.ok=1;
+   d.onclick=()=>{if(fsLock)return;if(t==say)fsDone(d,say);else{d.classList.add('bad');sayWord('Try again',.9);showRight(d)}};o.appendChild(d)});
+  setTimeout(()=>sayWord('Do you like '+w+'?',.75),300)}
+ fsCur={s:say}}
+const _mode10=mode;mode=function(m){_mode10(m);[['sj',18],['fs',19]].forEach(([id,k])=>{document.getElementById(id).style.display=m==k?'block':'none';document.getElementById('t'+k).classList.toggle('on',m==k)});
+ if(m==18)renderSJ();if(m==19&&!fsCur)startFS();document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== Find Someone Who (Worksheet 16) =====
+let fwList=[];try{fwList=JSON.parse(localStorage.getItem('fc_fw')||'[]')}catch(e){}
+function fwSave(){try{localStorage.setItem('fc_fw',JSON.stringify(fwList))}catch(e){}}
+const escH=t=>String(t).replace(/[<&"]/g,c=>({'<':'&lt;','&':'&amp;','"':'&quot;'}[c]));
+function fwSent(x){return `${x.n}'s favorite subject is ${x.s}.`}
+function fwDraw(){const sel=document.getElementById('fwsub');if(!sel.options.length)sel.innerHTML=subs.map(x=>`<option>${x[0]}</option>`).join('');
+ const t=document.getElementById('fwtab');
+ t.innerHTML='<tr>'+subs.map(x=>`<th>${x[1]}<br>${x[0]}</th>`).join('')+'</tr><tr>'+subs.map(x=>`<td style="vertical-align:top">${fwList.filter(f=>f.s==x[0]).map(f=>escH(f.n)).join('<br>')||'-'}</td>`).join('')+'</tr>';
+ document.getElementById('fwsent').innerHTML=fwList.length?fwList.map((x,i)=>`<div>${i+1}. <span style="cursor:pointer" onclick="sayWord(fwList[${i}]?fwSent(fwList[${i}]):'',.75)">🔊 <b class="nw">${escH(x.n)}</b>'s favorite subject is <b class="pl">${x.s}</b>.</span> <button class="b1 tbtn" style="font-size:.75rem;padding:2px 8px" onclick="fwList.splice(${i},1);fwSave();fwDraw()">ลบ</button></div>`).join(''):'<span style="font-family:Mali;color:#888">ยังไม่มีข้อมูล ลองถามเพื่อนดูนะ</span>'}
+function fwAdd(){const n=document.getElementById('fwname').value.trim(),sb=document.getElementById('fwsub').value;if(!n){document.getElementById('fwname').focus();return}
+ fwList.push({n,s:sb});fwSave();fwDraw();document.getElementById('fwname').value='';document.getElementById('fwname').focus();sayWord(fwSent({n,s:sb}),.75)}
+async function fwReadAll(){stopAll();stopFlag=false;for(const x of fwList){if(stopFlag)break;await new Promise(r=>{const u=new SpeechSynthesisUtterance(fwSent(x));u.lang='en-US';u.rate=.75;const v=getVoice();if(v)u.voice=v;u.onend=u.onerror=r;speechSynthesis.speak(u)})}}
+const _mode11=mode;mode=function(m){_mode11(m);document.getElementById('fw').style.display=m==20?'block':'none';document.getElementById('t20').classList.toggle('on',m==20);if(m==20)fwDraw();document.getElementById('catbar').style.display=m<=3?'':'none'};
+// ===== Category counts =====
+document.querySelectorAll('.cat').forEach(b=>{const c=b.dataset.c,n=c=='all'?ALL.length:ALL.filter(x=>x.c==c).length;const sp=document.createElement('span');sp.className='cnt';sp.textContent=n;b.appendChild(sp)});
+render();
+</script>
+<p class="hint">💡 ในหน้าการ์ดสุ่ม แตะการ์ดเพื่อฟังซ้ำ แตะพื้นหลังเพื่อปิด</p>
+<footer style="text-align:center;margin:30px auto 10px;font-family:Mali;color:#fff">
+<div style="display:inline-block;background:rgba(255,255,255,.85);color:#5a3e8a;border-radius:50px;padding:10px 26px;box-shadow:0 5px 0 rgba(0,0,0,.12);font-size:1.1rem">
+🎨 ออกแบบโดย <b>นางสาววัชราภรณ์ เที่ยงอารมณ์</b></div></footer>
+
+
+</body></html>
